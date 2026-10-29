@@ -1,0 +1,28 @@
+/* Raster building art study 01. Room designs intentionally unchanged. */
+.world.pixel-world{position:relative;height:auto;min-height:0;aspect-ratio:4/3;background:#12162d;overflow:hidden;isolation:isolate}
+.world.pixel-world::before,.world.pixel-world::after{display:none}
+.building-pixel-art{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated;user-select:none}
+.pixel-world .floor-marker{left:var(--pin-x);top:var(--pin-y);width:155px;height:36px;transform:translateY(-50%);z-index:10;filter:none;flex-direction:row}
+.pixel-world .floor-marker::before{width:33px;flex:none;border-top:1px solid #c4d8e8}
+.pixel-world .marker-node{width:5px;height:5px;left:-2px;top:16px;right:auto;background:#daf1fa;box-shadow:0 0 0 3px #8fcde738,0 0 8px #b1e2f666;border:0}
+.pixel-world .marker-label{min-width:112px;padding:7px 9px;background:#111b32ec;border:1px solid #99bec1;box-shadow:3px 3px 0 #08101f80;gap:4px}
+.pixel-world .marker-label b{font-size:12px;color:#e5f4f6}.pixel-world .marker-label small{font-size:7px;color:#b4cad8;letter-spacing:1px}.pixel-world .marker-label em{color:#c8dee2}
+.pixel-world .marker-mac01{transform:translate(-100%,-50%);flex-direction:row-reverse}.pixel-world .marker-mac01 .marker-node{left:auto;right:-2px;background:#83f4ff}.pixel-world .marker-mac01 .marker-label{border-color:#7de4ef}
+.pixel-world .marker-mac02 .marker-label{border-color:#d8b1ef}.pixel-world .marker-mac02 .marker-node{background:#e1c6f8}.pixel-world .marker-bbm .marker-label{border-color:#ecc795}.pixel-world .marker-bbm .marker-node{background:#ffdc9e}
+.pixel-world .floor-marker:hover,.pixel-world .floor-marker:focus-visible{z-index:25}.pixel-world .floor-marker:hover .marker-label{background:#253853}
+.pixel-world .marker-pop{top:40px;left:-35px;width:250px;max-height:310px;overflow:auto;background:#101a2cf7;border-color:#91aebd}.pixel-world .marker-mac01 .marker-pop{right:-35px;left:auto}.pixel-world .marker-bbm .marker-pop{top:auto;bottom:40px}
+.pixel-world .marker-pop .fact-rows>div{padding:4px 0}.pixel-world .marker-pop span{font-size:9px}.pixel-world .marker-pop small{margin-top:0}
+.art-caption{position:absolute;bottom:13px;left:14px;color:#dbe6ed;background:#0b1529bf;border:1px solid #99b2c333;padding:7px 9px;font:8px monospace;letter-spacing:1.4px;pointer-events:none}.art-caption b{font-weight:400;color:#b1bdca;margin-left:20px;font-size:7px}
+.motion-toggle{background:#1c3037;color:#c9d9bc;font:9px monospace;letter-spacing:.3px;border:1px solid #516457;padding:5px 8px;cursor:pointer}.motion-toggle:hover{background:#2b443f}
+.pixel-ambience{position:absolute;inset:0;pointer-events:none;overflow:hidden}.pixel-ambience i{position:absolute;display:block}
+.roof-beacon{left:51.4%;top:4.1%;width:3px;height:3px;background:#ffb0a0;box-shadow:0 0 0 2px #ff4b5433,0 0 7px #fa3144;animation:beacon-pulse 3.6s steps(1,end) infinite}
+.pixel-shuttle{top:14%;left:-8%;width:13px;height:3px;background:#9bb6c9;box-shadow:3px -2px 0 #819eb7,-3px 1px 0 #4d6d8c,12px 2px 0 #aceaf4,15px 2px 0 #a1d0eb66;animation:shuttle-crossing 28s steps(160,end) infinite;animation-delay:-8s}
+.day .pixel-shuttle{background:#446079;box-shadow:3px -2px 0 #56778d,-3px 1px 0 #355576,12px 2px 0 #f1d8a1}
+.water-glint{height:2px;background:#f8d59688;animation:water-shimmer 3s steps(3,end) infinite}.glint-one{left:46%;top:94%;width:4%;box-shadow:8px 7px 0 #ffd99344,-4px 15px 0 #fac88644}.glint-two{left:59%;top:96%;width:2%;animation-delay:-1s;background:#efb2d855}.glint-three{left:40%;top:98%;width:3%;animation-delay:-2s;background:#90ccd844}.day .water-glint{opacity:.4}
+.motion-paused .pixel-ambience i{animation-play-state:paused}
+@keyframes beacon-pulse{0%,12%,24%,100%{opacity:.15}6%,18%{opacity:1}}
+@keyframes shuttle-crossing{0%{left:-8%;transform:translateY(0)}100%{left:108%;transform:translateY(8px)}}
+@keyframes water-shimmer{0%,100%{opacity:.1;transform:scaleX(.6)}50%{opacity:.6;transform:scaleX(1)}}
+@media(max-width:1260px){.pixel-world .floor-marker{width:127px}.pixel-world .floor-marker::before{width:15px}.pixel-world .marker-label{min-width:106px}}
+@media(max-width:720px){.world.pixel-world{aspect-ratio:4/3;min-height:0}.pixel-world .floor-marker{width:101px;height:30px}.pixel-world .floor-marker::before{width:14px}.pixel-world .marker-label{min-width:81px;padding:5px 6px;gap:3px}.pixel-world .marker-label b{font-size:10px}.pixel-world .marker-label small{font-size:6px;letter-spacing:.5px}.pixel-world .marker-node{top:13px}.art-caption{font-size:6px;bottom:7px;left:7px;padding:5px;letter-spacing:.5px}.art-caption b{font-size:6px;margin-left:8px}.motion-toggle{font-size:8px}.pixel-shuttle{transform:scale(.7)}.roof-beacon{width:2px;height:2px}.pixel-world .marker-pop{display:none!important}}
+@media(prefers-reduced-motion:reduce){.pixel-ambience i{animation:none!important}.motion-toggle{display:none}.roof-beacon{opacity:.6}.water-glint{display:none}}

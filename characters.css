@@ -1,0 +1,83 @@
+/* Reference-based character sprite studies. All frames read the original transparent atlas. */
+.actor-atlas{display:block;width:112px;height:118px;flex:none;overflow:visible;image-rendering:pixelated;filter:drop-shadow(2px 3px 0 #11142644)}
+.actor-atlas image{image-rendering:pixelated}.atlas-frame{opacity:0}.atlas-frame:first-child{opacity:1}
+.actor-atlas .animation-halo image{image-rendering:auto}
+.animation-halo[data-halo="A"]{filter:brightness(1.10) saturate(.96)}
+.animation-halo{pointer-events:none}
+.character-page .actor-atlas[aria-label^="GibReaL04"]{aspect-ratio:var(--atlas-aspect);height:auto}
+/* Leave room above the standing sprite without changing its camera scale. */
+.animation-stage:has(>.actor-atlas .animation-halo){min-height:270px}
+.pixel-room .placed-agent.standing-agent:has(.animation-halo) .agent-caption{bottom:117%}
+.atlas-animated .atlas-frame{animation:atlas-four var(--atlas-duration) steps(1,end) infinite;animation-delay:var(--frame-delay)}
+.atlas-animated.atlas-count-8 .atlas-frame{animation-name:atlas-eight}
+.actor-atlas.motion-paused .atlas-frame,.motion-paused .actor-atlas .atlas-frame{animation-play-state:paused!important}
+@keyframes atlas-four{0%,24.999%{opacity:1}25%,100%{opacity:0}}
+@keyframes atlas-eight{0%{opacity:1}12.5%,100%{opacity:0}}
+.has-portrait{overflow:hidden;display:inline-grid!important;place-items:center;padding:0!important;background:#463324!important;border-color:#987645!important}
+.ui-portrait{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.nav-avatar.has-portrait{width:24px;height:24px;flex:none}.mini-agents .mini-avatar{width:24px;height:24px}.p-avatar.has-portrait{width:38px;height:38px}
+.hero-portrait{display:block;width:126px;height:126px;background:transparent!important;border:0}.portrait-hero{background:#342b3c;border-color:#9b7754;width:164px;height:186px}
+.pixel-room .custom-agent .actor-atlas{width:120px;height:126px;filter:drop-shadow(3px 4px 0 #251e2644)}
+/* BBMango01 scales with the artwork at every viewport size. Labels are outside
+   the figure's layout, so the placement coordinates always refer to her feet. */
+.pixel-room .scene-agent.placed-agent{width:var(--actor-width);margin:0;gap:0;transform:translate(-50%,-97%);z-index:7}
+.pixel-room .placed-agent .actor-atlas{width:100%;height:auto;aspect-ratio:var(--atlas-aspect,320/336);filter:drop-shadow(1px 2px 0 #251e2633)}
+.pixel-room .placed-agent::after{bottom:2%;left:35%;width:30%;height:3%;background:#38241255}
+.pixel-room .placed-agent.seated-agent::after{display:none}
+.pixel-room .placed-agent .agent-caption{position:absolute;top:99%;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;white-space:nowrap}
+.pixel-room .placed-agent.standing-agent .agent-caption{top:auto;bottom:101%}
+.pixel-room .placed-agent .agent-caption b{font-size:clamp(6px,1.05cqw,10px);padding:2px 4px;margin:0}
+.pixel-room .placed-agent .agent-caption small{font-size:clamp(5px,.75cqw,8px);padding:1px 3px}
+.pixel-room .placed-agent:focus-visible{outline:2px solid #ffe2a3;outline-offset:2px}
+.pixel-room.actors-hidden .custom-agent,.pixel-room.actors-hidden .prototype-agent{display:none}
+.sprite-studio-link{display:inline-block;font:10px monospace;color:#e7c489;margin:0 0 14px;text-decoration:underline;text-underline-offset:3px}
+.character-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#221e30;border:1px solid #554358;padding:18px 22px;margin-bottom:18px}
+.character-toolbar strong{font-size:14px;color:#efd3a1}.character-toolbar p{font-size:12px;color:#b7a9bb;line-height:1.6;margin:6px 0 0}
+.icon-preview{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px;background:#201d2c;border:1px solid #4b3f51;margin-bottom:22px}.icon-preview h2{font-size:16px;margin-bottom:8px}.icon-preview p{font-size:11px;color:#baaebe;margin-bottom:0;line-height:1.6}
+.icon-sizes{display:flex;align-items:end;gap:23px}.icon-sizes>div{display:flex;flex-direction:column;align-items:center;gap:9px}.icon-sizes small{font:8px monospace;color:#b2a8b8}
+.sample-icon{border:1px solid #947654;border-radius:3px}.icon-24{width:24px;height:24px}.icon-32{width:32px;height:32px}.icon-64{width:64px;height:64px}.icon-96{width:96px;height:96px}
+.animation-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.animation-card{min-width:0;background:#211c2c;border:1px solid #56435b}.animation-card-title{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #4b3b50;gap:8px}.animation-card-title h2{font-size:14px;margin:0;color:#e9d6e5;font-weight:500}.animation-card-title>span{font:9px monospace;color:#b7a4ba;white-space:nowrap}
+.animation-stage{height:246px;display:grid;place-items:center;background-color:#251e32;background-image:linear-gradient(45deg,#ffffff03 25%,transparent 25%,transparent 75%,#ffffff03 75%),linear-gradient(45deg,#ffffff03 25%,transparent 25%,transparent 75%,#ffffff03 75%);background-size:24px 24px;background-position:0 0,12px 12px;border-bottom:1px solid #48354e}
+.animation-stage .actor-atlas{width:208px;height:218px;filter:drop-shadow(3px 5px 0 #100c2066)}
+.animation-card>p{font-size:11px;line-height:1.8;color:#c5b8cd;margin:0;padding:17px;min-height:88px}.art-study-note{font:11px/1.8 monospace;color:#a9a0b3;margin:22px 0 0}
+@media(max-width:1100px){.animation-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.icon-preview{flex-wrap:wrap}.icon-sizes{gap:20px}}
+@media(max-width:720px){.animation-grid{grid-template-columns:1fr}.character-toolbar{flex-wrap:wrap;padding:16px}.icon-preview{padding:16px;gap:20px}.icon-sizes{gap:20px}.portrait-hero{width:100px;height:151px}.hero-portrait{width:90px;height:90px}.character-page .page-title-row h1{font-size:27px}.animation-stage{height:260px}}
+@media(prefers-reduced-motion:reduce){.actor-atlas .atlas-frame{animation:none!important;opacity:0!important}.actor-atlas .atlas-frame:first-child{opacity:1!important}}
+
+/* Studio seating previews reuse the actual office background and chair. */
+.seat-preview{background:#aa743b}
+.seat-preview-scene{width:100%;height:100%;display:block;image-rendering:pixelated}
+.seat-preview-scene .actor-atlas{width:var(--canvas-width);height:var(--canvas-height);filter:none}
+
+/* Square GibReaL01 source canvases retain their proportions in the studio. */
+.character-page .actor-atlas[aria-label^="GibReaL01"]{aspect-ratio:1;height:auto}
+
+.character-page .actor-atlas[aria-label^="GibReaL03"]{aspect-ratio:1;height:auto}
+.character-page .actor-atlas[aria-label^="GibReaL02"]{aspect-ratio:var(--atlas-aspect);height:auto}
+.animation-stage>.actor-atlas.atlas-static[aria-label^="GibReaL02"]{width:242px}
+.pixel-room .placed-agent.ground-agent::after{display:none}
+
+/* Neural cable stays behind the seated actor and shares room coordinates. */
+.pixel-room .room-neural-link{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}
+
+/* Each matched view shares its reference card's camera and display size. */
+.pose-preview-scene{display:block;image-rendering:pixelated}
+.pose-preview-scene.matched-working-view{width:100%;height:100%}
+.pose-preview-scene.matched-gibreal01-view{width:208px;height:208px}
+.pose-preview-scene .actor-atlas{width:var(--canvas-width);height:var(--canvas-height);filter:none}
+
+.character-page .actor-atlas[aria-label="GibReaL04 unknown animation"]{width:192.4px}
+
+.character-page .actor-atlas[aria-label^="GibReaL05"]{aspect-ratio:var(--atlas-aspect);height:auto}
+.animation-stage>.actor-atlas.atlas-static[aria-label^="GibReaL05"]{width:277.3px}
+
+.character-page .actor-atlas[aria-label^="Muv01"]{aspect-ratio:var(--atlas-aspect);height:auto}
+.animation-stage>.actor-atlas.atlas-static[aria-label^="Muv01"]{width:242.7px}
+.room-leader-foreground{position:absolute;inset:0;width:100%;height:100%;z-index:7;pointer-events:none;image-rendering:pixelated}
+
+/* The final avatar retains its source aspect ratio in all studio poses. */
+.character-page .actor-atlas[aria-label^="BBMango02"]{aspect-ratio:var(--atlas-aspect);height:auto}
+
+.pixel-room.actors-hidden .room-neural-link,.pixel-room.actors-hidden .room-leader-foreground{display:none}
+
+.pixel-room .ground-agent[href="#/agents/bbmango02"] .agent-caption{top:auto;bottom:101%}

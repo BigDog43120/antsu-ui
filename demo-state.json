@@ -1,0 +1,151 @@
+{
+  "brand": "ANTSU",
+  "building": {
+    "floors": 51,
+    "name": "ANTSU TOWER"
+  },
+  "machines": [
+    {
+      "id": "mac01",
+      "name": "Mac01",
+      "floor": 39,
+      "wing": "LEFT",
+      "room": "server",
+      "label": "Deep Core / Server Lab",
+      "agents": [
+        "gibreal01",
+        "gibreal02",
+        "gibreal03"
+      ],
+      "telemetry": {},
+      "connection": "demo",
+      "lastSeen": null
+    },
+    {
+      "id": "mac02",
+      "name": "Mac02",
+      "floor": 47,
+      "wing": "CENTER",
+      "room": "office",
+      "label": "Command Office",
+      "agents": [
+        "muv01",
+        "gibreal04",
+        "gibreal05"
+      ],
+      "telemetry": {},
+      "connection": "demo",
+      "lastSeen": null
+    },
+    {
+      "id": "bbm",
+      "name": "BBM",
+      "floor": 4,
+      "wing": "RIGHT",
+      "room": "mango",
+      "label": "Mango Studio",
+      "agents": [
+        "bbmango01",
+        "bbmango02",
+        "bbmango03"
+      ],
+      "telemetry": {},
+      "connection": "demo",
+      "lastSeen": null
+    }
+  ],
+  "agents": [
+    {
+      "id": "gibreal01",
+      "name": "GibReaL01",
+      "machine": "mac01",
+      "isMain": true,
+      "position": "Core operations",
+      "duty": "Primary Mac01 coordinator",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "gibreal02",
+      "name": "GibReaL02",
+      "machine": "mac01",
+      "isMain": false,
+      "position": "Research console",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "gibreal03",
+      "name": "GibReaL03",
+      "machine": "mac01",
+      "isMain": false,
+      "position": "Systems console",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "muv01",
+      "name": "Muv01",
+      "machine": "mac02",
+      "isMain": true,
+      "position": "Team lead",
+      "duty": "Primary Mac02 coordinator",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "gibreal04",
+      "name": "GibReaL04",
+      "machine": "mac02",
+      "isMain": false,
+      "position": "Operations desk",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "gibreal05",
+      "name": "GibReaL05",
+      "machine": "mac02",
+      "isMain": false,
+      "position": "Support desk",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "bbmango01",
+      "name": "BBMango01",
+      "machine": "bbm",
+      "isMain": false,
+      "position": "Production desk",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "bbmango02",
+      "name": "BBMango02",
+      "machine": "bbm",
+      "isMain": false,
+      "position": "Archive desk",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    },
+    {
+      "id": "bbmango03",
+      "name": "BBMango03",
+      "machine": "bbm",
+      "isMain": false,
+      "position": "Design desk",
+      "duty": "To be configured",
+      "status": "unknown",
+      "source": "demo"
+    }
+  ],
+  "liveMachines": 0,
+  "demo": true
+}

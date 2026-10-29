@@ -1,0 +1,2872 @@
+{
+  "bbmango01": {
+    "icon": "/assets/sprites/bbmango01-icon-v3.png",
+    "label": "BBMango01 · Mango assistant",
+    "working": {
+      "src": "/assets/sprites/bbmango01-eight-v2.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 361.2,
+        "frames": [
+          {
+            "x": 40,
+            "y": 0,
+            "width": 310,
+            "height": 350,
+            "offsetX": 21.463,
+            "offsetY": -2
+          },
+          {
+            "x": 331,
+            "y": 0,
+            "width": 310,
+            "height": 350,
+            "offsetX": 17.963,
+            "offsetY": -4
+          },
+          {
+            "x": 625,
+            "y": 0,
+            "width": 310,
+            "height": 350,
+            "offsetX": 17.463,
+            "offsetY": -4
+          },
+          {
+            "x": 925,
+            "y": 0,
+            "width": 310,
+            "height": 350,
+            "offsetX": 21.463,
+            "offsetY": -4
+          },
+          {
+            "x": 40,
+            "y": 350,
+            "width": 310,
+            "height": 321,
+            "offsetX": 20.963,
+            "offsetY": 25
+          },
+          {
+            "x": 331,
+            "y": 350,
+            "width": 310,
+            "height": 321,
+            "offsetX": 17.963,
+            "offsetY": 25
+          },
+          {
+            "x": 625,
+            "y": 350,
+            "width": 310,
+            "height": 321,
+            "offsetX": 16.963,
+            "offsetY": 25
+          },
+          {
+            "x": 925,
+            "y": 350,
+            "width": 310,
+            "height": 321,
+            "offsetX": 16.463,
+            "offsetY": 24
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/bbmango01-eight-v2.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 361.2,
+        "frames": [
+          {
+            "x": 40,
+            "y": 671,
+            "width": 310,
+            "height": 291,
+            "offsetX": 21.362,
+            "offsetY": 59.375
+          },
+          {
+            "x": 331,
+            "y": 671,
+            "width": 310,
+            "height": 291,
+            "offsetX": 11.862,
+            "offsetY": 59.375
+          },
+          {
+            "x": 625,
+            "y": 671,
+            "width": 310,
+            "height": 291,
+            "offsetX": 16.862,
+            "offsetY": 58.375
+          },
+          {
+            "x": 925,
+            "y": 671,
+            "width": 310,
+            "height": 291,
+            "offsetX": 12.362,
+            "offsetY": 59.375
+          },
+          {
+            "x": 40,
+            "y": 962,
+            "width": 310,
+            "height": 292,
+            "offsetX": 22.862,
+            "offsetY": 65.375
+          },
+          {
+            "x": 331,
+            "y": 962,
+            "width": 310,
+            "height": 292,
+            "offsetX": 17.362,
+            "offsetY": 64.375
+          },
+          {
+            "x": 625,
+            "y": 962,
+            "width": 310,
+            "height": 292,
+            "offsetX": 13.362,
+            "offsetY": 64.375
+          },
+          {
+            "x": 925,
+            "y": 962,
+            "width": 310,
+            "height": 292,
+            "offsetX": 10.862,
+            "offsetY": 65.375
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/bbmango01-actions-v5.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 320,
+        "canvasHeight": 336,
+        "frames": [
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          },
+          {
+            "x": 40,
+            "y": 635,
+            "width": 310,
+            "height": 290,
+            "offsetX": 5,
+            "offsetY": 34
+          }
+        ]
+      },
+      "fps": 2.5,
+      "still": true
+    },
+    "unknown": {
+      "src": "/assets/sprites/bbmango01-actions-v5.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 320,
+        "canvasHeight": 336,
+        "frames": [
+          {
+            "x": 40,
+            "y": 925,
+            "width": 310,
+            "height": 329,
+            "offsetX": 5,
+            "offsetY": 18
+          }
+        ]
+      },
+      "fps": 1
+    },
+    "description": "Golden-orange twin buns, luminous amber eyes, red knot tassels and a detailed mango-yellow uniform."
+  },
+  "bbmango03": {
+    "icon": "/assets/sprites/bbmango03-icon-v1.png",
+    "label": "BBMango03 · Mango designer",
+    "description": "Golden bob, white-and-gold coat and expressive ω smile. Holographic drawing, tablet reading and a seated exhausted pose.",
+    "working": {
+      "src": "/assets/sprites/bbmango03-eight-v1.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 360,
+        "canvasHeight": 336,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 342,
+            "height": 332,
+            "offsetX": 15.5,
+            "offsetY": -3
+          },
+          {
+            "x": 342,
+            "y": 0,
+            "width": 308,
+            "height": 332,
+            "offsetX": 45.5,
+            "offsetY": -4
+          },
+          {
+            "x": 650,
+            "y": 0,
+            "width": 312,
+            "height": 332,
+            "offsetX": 39.5,
+            "offsetY": -3
+          },
+          {
+            "x": 962,
+            "y": 0,
+            "width": 292,
+            "height": 332,
+            "offsetX": 41.5,
+            "offsetY": -4
+          },
+          {
+            "x": 0,
+            "y": 332,
+            "width": 342,
+            "height": 313,
+            "offsetX": 15,
+            "offsetY": 16
+          },
+          {
+            "x": 342,
+            "y": 332,
+            "width": 308,
+            "height": 313,
+            "offsetX": 44,
+            "offsetY": 16
+          },
+          {
+            "x": 650,
+            "y": 332,
+            "width": 312,
+            "height": 313,
+            "offsetX": 40.5,
+            "offsetY": 15
+          },
+          {
+            "x": 962,
+            "y": 332,
+            "width": 292,
+            "height": 313,
+            "offsetX": 41.5,
+            "offsetY": 15
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/bbmango03-resting-chair-v2.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 490,
+        "canvasHeight": 460,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 444,
+            "height": 444,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 444,
+            "y": 0,
+            "width": 443,
+            "height": 444,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 887,
+            "y": 0,
+            "width": 443,
+            "height": 444,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 1330,
+            "y": 0,
+            "width": 444,
+            "height": 444,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 444,
+            "width": 444,
+            "height": 443,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 444,
+            "y": 444,
+            "width": 443,
+            "height": 443,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 887,
+            "y": 444,
+            "width": 443,
+            "height": 443,
+            "offsetX": 28,
+            "offsetY": 0
+          },
+          {
+            "x": 1330,
+            "y": 444,
+            "width": 444,
+            "height": 443,
+            "offsetX": 28,
+            "offsetY": 0
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/bbmango03-ceased-v1.png",
+      "fps": 1,
+      "atlas": {
+        "width": 1230,
+        "height": 1278,
+        "canvasWidth": 1230,
+        "canvasHeight": 1292,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 1230,
+            "height": 1278,
+            "offsetX": 0,
+            "offsetY": 4
+          }
+        ]
+      },
+      "still": true
+    },
+    "unknown": {
+      "src": "/assets/sprites/bbmango03-actions-v1.png",
+      "fps": 1,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 320,
+        "canvasHeight": 336,
+        "frames": [
+          {
+            "x": 0,
+            "y": 940,
+            "width": 314,
+            "height": 314,
+            "offsetX": -5,
+            "offsetY": 13
+          }
+        ]
+      }
+    }
+  },
+  "gibreal01": {
+    "icon": "/assets/sprites/gibreal01-icon-v4.png",
+    "label": "GibReaL01 · Mac01 main agent",
+    "description": "Pink bob and purple streak, teal eyes, red-and-gold qipao and ivory mechanical limbs. Expressionless hologram work, movie and cola rest, and a motionless lowered-head pose.",
+    "working": {
+      "src": "/assets/sprites/gibreal01-eight-v1.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 330,
+            "height": 323,
+            "offsetX": 3,
+            "offsetY": 14
+          },
+          {
+            "x": 330,
+            "y": 0,
+            "width": 310,
+            "height": 323,
+            "offsetX": 30,
+            "offsetY": 14
+          },
+          {
+            "x": 640,
+            "y": 0,
+            "width": 320,
+            "height": 323,
+            "offsetX": 35,
+            "offsetY": 14
+          },
+          {
+            "x": 960,
+            "y": 0,
+            "width": 294,
+            "height": 323,
+            "offsetX": 29,
+            "offsetY": 14
+          },
+          {
+            "x": 0,
+            "y": 323,
+            "width": 330,
+            "height": 312,
+            "offsetX": 3.5,
+            "offsetY": 27
+          },
+          {
+            "x": 330,
+            "y": 323,
+            "width": 310,
+            "height": 312,
+            "offsetX": 29.5,
+            "offsetY": 26
+          },
+          {
+            "x": 640,
+            "y": 323,
+            "width": 320,
+            "height": 312,
+            "offsetX": 31,
+            "offsetY": 26
+          },
+          {
+            "x": 960,
+            "y": 323,
+            "width": 294,
+            "height": 312,
+            "offsetX": 28.5,
+            "offsetY": 26
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-b.png",
+        "variant": "B",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "crop": [
+          25,
+          135,
+          1486,
+          735
+        ],
+        "width": 101.5,
+        "height": 50.05,
+        "positions": [
+          {
+            "x": 97.25,
+            "y": -8.05
+          },
+          {
+            "x": 96.25,
+            "y": -10.05
+          },
+          {
+            "x": 95.25,
+            "y": -8.05
+          },
+          {
+            "x": 90.25,
+            "y": -8.05
+          },
+          {
+            "x": 97.75,
+            "y": -5.05
+          },
+          {
+            "x": 95.75,
+            "y": -7.05
+          },
+          {
+            "x": 90.25,
+            "y": -6.05
+          },
+          {
+            "x": 88.75,
+            "y": -6.05
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/gibreal01-romantic-rest-v1.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 635,
+            "width": 330,
+            "height": 307,
+            "offsetX": -23,
+            "offsetY": 33
+          },
+          {
+            "x": 330,
+            "y": 635,
+            "width": 310,
+            "height": 307,
+            "offsetX": -1,
+            "offsetY": 33
+          },
+          {
+            "x": 640,
+            "y": 635,
+            "width": 320,
+            "height": 307,
+            "offsetX": 1.5,
+            "offsetY": 33
+          },
+          {
+            "x": 960,
+            "y": 635,
+            "width": 294,
+            "height": 307,
+            "offsetX": 5,
+            "offsetY": 33
+          },
+          {
+            "x": 0,
+            "y": 942,
+            "width": 330,
+            "height": 312,
+            "offsetX": -25,
+            "offsetY": 36
+          },
+          {
+            "x": 330,
+            "y": 942,
+            "width": 310,
+            "height": 312,
+            "offsetX": -2.5,
+            "offsetY": 36
+          },
+          {
+            "x": 640,
+            "y": 942,
+            "width": 320,
+            "height": 312,
+            "offsetX": 0,
+            "offsetY": 36
+          },
+          {
+            "x": 960,
+            "y": 942,
+            "width": 294,
+            "height": 312,
+            "offsetX": 5,
+            "offsetY": 36
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-a-deep-blue.png",
+        "variant": "A",
+        "imageWidth": 1024,
+        "imageHeight": 1536,
+        "crop": [
+          90,
+          600,
+          840,
+          382
+        ],
+        "width": 101.5,
+        "height": 46.2,
+        "positions": [
+          {
+            "x": 41.25,
+            "y": 2.8
+          },
+          {
+            "x": 43.25,
+            "y": 2.8
+          },
+          {
+            "x": 45.75,
+            "y": 2.8
+          },
+          {
+            "x": 40.25,
+            "y": 2.8
+          },
+          {
+            "x": 39.25,
+            "y": 4.8
+          },
+          {
+            "x": 41.75,
+            "y": 3.8
+          },
+          {
+            "x": 44.25,
+            "y": 4.8
+          },
+          {
+            "x": 40.25,
+            "y": 4.8
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/gibreal01-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 800,
+        "canvasHeight": 800,
+        "frames": [
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          },
+          {
+            "x": 300,
+            "y": 100,
+            "width": 450,
+            "height": 780,
+            "offsetX": 70,
+            "offsetY": 18
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/gibreal01-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 940,
+        "canvasHeight": 940,
+        "frames": [
+          {
+            "x": 1100,
+            "y": 0,
+            "width": 400,
+            "height": 887,
+            "offsetX": 194,
+            "offsetY": 42
+          }
+        ]
+      }
+    }
+  },
+  "gibreal03": {
+    "icon": "/assets/sprites/gibreal03-icon-v2.png",
+    "label": "GibReaL03 · Mac01 systems agent",
+    "description": "Dusty pink waves, teal eyes, cybernetic earpiece and white lace dress. Neural-link work, server inspection and a quiet folded-leg ceased pose.",
+    "working": {
+      "src": "/assets/sprites/gibreal03-eight-v2.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 360,
+        "canvasHeight": 360,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 350,
+            "offsetX": 3.5,
+            "offsetY": -7
+          },
+          {
+            "x": 320,
+            "y": 0,
+            "width": 310,
+            "height": 350,
+            "offsetX": 19.5,
+            "offsetY": -7
+          },
+          {
+            "x": 630,
+            "y": 0,
+            "width": 310,
+            "height": 350,
+            "offsetX": 22,
+            "offsetY": -7
+          },
+          {
+            "x": 940,
+            "y": 0,
+            "width": 314,
+            "height": 350,
+            "offsetX": 25,
+            "offsetY": -7
+          },
+          {
+            "x": 0,
+            "y": 350,
+            "width": 320,
+            "height": 300,
+            "offsetX": 4,
+            "offsetY": 44
+          },
+          {
+            "x": 320,
+            "y": 350,
+            "width": 310,
+            "height": 300,
+            "offsetX": 19.5,
+            "offsetY": 44
+          },
+          {
+            "x": 630,
+            "y": 350,
+            "width": 310,
+            "height": 300,
+            "offsetX": 24.5,
+            "offsetY": 45
+          },
+          {
+            "x": 940,
+            "y": 350,
+            "width": 314,
+            "height": 300,
+            "offsetX": 25,
+            "offsetY": 44
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-b.png",
+        "variant": "B",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "crop": [
+          25,
+          135,
+          1486,
+          735
+        ],
+        "width": 101.5,
+        "height": 50.05,
+        "positions": [
+          {
+            "x": 132.75,
+            "y": 31.95
+          },
+          {
+            "x": 134.75,
+            "y": 31.95
+          },
+          {
+            "x": 134.25,
+            "y": 31.95
+          },
+          {
+            "x": 132.25,
+            "y": 31.95
+          },
+          {
+            "x": 133.25,
+            "y": 32.95
+          },
+          {
+            "x": 134.75,
+            "y": 32.95
+          },
+          {
+            "x": 136.75,
+            "y": 33.95
+          },
+          {
+            "x": 132.25,
+            "y": 32.95
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/gibreal03-eight-v2.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 360,
+        "canvasHeight": 360,
+        "frames": [
+          {
+            "x": 0,
+            "y": 650,
+            "width": 320,
+            "height": 288,
+            "offsetX": -4.5,
+            "offsetY": 54
+          },
+          {
+            "x": 320,
+            "y": 650,
+            "width": 310,
+            "height": 288,
+            "offsetX": 13,
+            "offsetY": 54
+          },
+          {
+            "x": 630,
+            "y": 650,
+            "width": 310,
+            "height": 288,
+            "offsetX": 12.5,
+            "offsetY": 54
+          },
+          {
+            "x": 940,
+            "y": 650,
+            "width": 314,
+            "height": 288,
+            "offsetX": 15.5,
+            "offsetY": 54
+          },
+          {
+            "x": 0,
+            "y": 938,
+            "width": 320,
+            "height": 316,
+            "offsetX": -3.5,
+            "offsetY": 59
+          },
+          {
+            "x": 320,
+            "y": 938,
+            "width": 310,
+            "height": 316,
+            "offsetX": 13,
+            "offsetY": 58
+          },
+          {
+            "x": 630,
+            "y": 938,
+            "width": 310,
+            "height": 316,
+            "offsetX": 14,
+            "offsetY": 58
+          },
+          {
+            "x": 940,
+            "y": 938,
+            "width": 314,
+            "height": 316,
+            "offsetX": 17,
+            "offsetY": 58
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-a-deep-blue.png",
+        "variant": "A",
+        "imageWidth": 1024,
+        "imageHeight": 1536,
+        "crop": [
+          90,
+          600,
+          840,
+          382
+        ],
+        "width": 101.5,
+        "height": 46.2,
+        "positions": [
+          {
+            "x": 119.75,
+            "y": 43.8
+          },
+          {
+            "x": 122.25,
+            "y": 43.8
+          },
+          {
+            "x": 119.75,
+            "y": 43.8
+          },
+          {
+            "x": 117.75,
+            "y": 43.8
+          },
+          {
+            "x": 120.75,
+            "y": 49.8
+          },
+          {
+            "x": 122.25,
+            "y": 48.8
+          },
+          {
+            "x": 121.25,
+            "y": 48.8
+          },
+          {
+            "x": 119.25,
+            "y": 48.8
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/gibreal03-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 1000,
+        "canvasHeight": 1000,
+        "frames": [
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          },
+          {
+            "x": 170,
+            "y": 275,
+            "width": 650,
+            "height": 605,
+            "offsetX": 175,
+            "offsetY": 355
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/gibreal03-static-v2.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 1000,
+        "canvasHeight": 1000,
+        "frames": [
+          {
+            "x": 1110,
+            "y": 0,
+            "width": 460,
+            "height": 887,
+            "offsetX": 270,
+            "offsetY": 78
+          }
+        ]
+      }
+    }
+  },
+  "gibreal02": {
+    "icon": "/assets/sprites/gibreal02-icon-v1.png",
+    "label": "GibReaL02 · Mac01 research agent",
+    "description": "Dusty pink bob, white glasses, teal eyes and cyan hair clip. Charcoal suit with pink paw tie, tablet research and seated holographic reading.",
+    "working": {
+      "src": "/assets/sprites/gibreal02-eight-v1.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 336,
+            "offsetX": -8,
+            "offsetY": 9
+          },
+          {
+            "x": 320,
+            "y": 0,
+            "width": 315,
+            "height": 336,
+            "offsetX": 30,
+            "offsetY": 9
+          },
+          {
+            "x": 635,
+            "y": 0,
+            "width": 315,
+            "height": 336,
+            "offsetX": 38,
+            "offsetY": 9
+          },
+          {
+            "x": 950,
+            "y": 0,
+            "width": 304,
+            "height": 336,
+            "offsetX": 61,
+            "offsetY": 9
+          },
+          {
+            "x": 0,
+            "y": 336,
+            "width": 320,
+            "height": 329,
+            "offsetX": -9,
+            "offsetY": 14
+          },
+          {
+            "x": 320,
+            "y": 336,
+            "width": 315,
+            "height": 329,
+            "offsetX": 25,
+            "offsetY": 14
+          },
+          {
+            "x": 635,
+            "y": 336,
+            "width": 315,
+            "height": 329,
+            "offsetX": 32,
+            "offsetY": 14
+          },
+          {
+            "x": 950,
+            "y": 336,
+            "width": 304,
+            "height": 329,
+            "offsetX": 55,
+            "offsetY": 14
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-b.png",
+        "variant": "B",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "crop": [
+          25,
+          135,
+          1486,
+          735
+        ],
+        "width": 101.5,
+        "height": 50.05,
+        "positions": [
+          {
+            "x": 121.25,
+            "y": -21.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -21.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -21.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -21.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/gibreal02-eight-v1.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 665,
+            "width": 320,
+            "height": 289,
+            "offsetX": 36,
+            "offsetY": 51
+          },
+          {
+            "x": 320,
+            "y": 665,
+            "width": 315,
+            "height": 289,
+            "offsetX": 62,
+            "offsetY": 50
+          },
+          {
+            "x": 635,
+            "y": 665,
+            "width": 315,
+            "height": 289,
+            "offsetX": 66,
+            "offsetY": 50
+          },
+          {
+            "x": 950,
+            "y": 665,
+            "width": 304,
+            "height": 289,
+            "offsetX": 74,
+            "offsetY": 50
+          },
+          {
+            "x": 0,
+            "y": 954,
+            "width": 320,
+            "height": 300,
+            "offsetX": 36,
+            "offsetY": 53
+          },
+          {
+            "x": 320,
+            "y": 954,
+            "width": 315,
+            "height": 300,
+            "offsetX": 62,
+            "offsetY": 52
+          },
+          {
+            "x": 635,
+            "y": 954,
+            "width": 315,
+            "height": 300,
+            "offsetX": 66,
+            "offsetY": 52
+          },
+          {
+            "x": 950,
+            "y": 954,
+            "width": 304,
+            "height": 300,
+            "offsetX": 74,
+            "offsetY": 51
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-a-deep-blue.png",
+        "variant": "A",
+        "imageWidth": 1024,
+        "imageHeight": 1536,
+        "crop": [
+          90,
+          600,
+          840,
+          382
+        ],
+        "width": 101.5,
+        "height": 46.2,
+        "positions": [
+          {
+            "x": 121.25,
+            "y": 16.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 15.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 15.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 15.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 15.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 15.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 15.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 14.799999999999997
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/gibreal02-ceased-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 1200,
+        "canvasHeight": 1254,
+        "frames": [
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          },
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/gibreal02-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 1200,
+        "canvasHeight": 1254,
+        "frames": [
+          {
+            "x": 350,
+            "y": 60,
+            "width": 540,
+            "height": 1140,
+            "offsetX": 316,
+            "offsetY": 81
+          }
+        ]
+      }
+    }
+  },
+  "gibreal04": {
+    "icon": "/assets/sprites/gibreal04-icon-v1.png",
+    "label": "GibReaL04 · Mac02 operations agent",
+    "description": "Long rose curls, teal eyes, heart choker, burgundy top and silver mechanical arms. Terminal operations, shy resting on the left office floor and a quiet seated ceased pose.",
+    "working": {
+      "src": "/assets/sprites/gibreal04-eight-v1.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1245,
+        "height": 1263,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 325,
+            "height": 326,
+            "offsetX": -44,
+            "offsetY": 15
+          },
+          {
+            "x": 325,
+            "y": 0,
+            "width": 310,
+            "height": 326,
+            "offsetX": -16,
+            "offsetY": 14
+          },
+          {
+            "x": 635,
+            "y": 0,
+            "width": 305,
+            "height": 326,
+            "offsetX": -9,
+            "offsetY": 15
+          },
+          {
+            "x": 940,
+            "y": 0,
+            "width": 305,
+            "height": 326,
+            "offsetX": -8,
+            "offsetY": 15
+          },
+          {
+            "x": 0,
+            "y": 326,
+            "width": 325,
+            "height": 312,
+            "offsetX": -44,
+            "offsetY": 29
+          },
+          {
+            "x": 325,
+            "y": 326,
+            "width": 310,
+            "height": 312,
+            "offsetX": -16,
+            "offsetY": 29
+          },
+          {
+            "x": 635,
+            "y": 326,
+            "width": 305,
+            "height": 312,
+            "offsetX": -9,
+            "offsetY": 29
+          },
+          {
+            "x": 940,
+            "y": 326,
+            "width": 305,
+            "height": 312,
+            "offsetX": -8,
+            "offsetY": 29
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-b.png",
+        "variant": "B",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "crop": [
+          25,
+          135,
+          1486,
+          735
+        ],
+        "width": 101.5,
+        "height": 50.05,
+        "positions": [
+          {
+            "x": 121.25,
+            "y": -15.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -15.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -14.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -14.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -12.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -12.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -12.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -12.049999999999997
+          }
+        ]
+      },
+      "flipX": true
+    },
+    "resting": {
+      "src": "/assets/sprites/gibreal04-eight-v1.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1245,
+        "height": 1263,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 638,
+            "width": 325,
+            "height": 294,
+            "offsetX": 2,
+            "offsetY": 46
+          },
+          {
+            "x": 325,
+            "y": 638,
+            "width": 310,
+            "height": 294,
+            "offsetX": 17,
+            "offsetY": 46
+          },
+          {
+            "x": 635,
+            "y": 638,
+            "width": 305,
+            "height": 294,
+            "offsetX": 18,
+            "offsetY": 46
+          },
+          {
+            "x": 940,
+            "y": 638,
+            "width": 305,
+            "height": 294,
+            "offsetX": 12,
+            "offsetY": 46
+          },
+          {
+            "x": 0,
+            "y": 932,
+            "width": 325,
+            "height": 331,
+            "offsetX": 2,
+            "offsetY": 44
+          },
+          {
+            "x": 325,
+            "y": 932,
+            "width": 310,
+            "height": 331,
+            "offsetX": 17,
+            "offsetY": 44
+          },
+          {
+            "x": 635,
+            "y": 932,
+            "width": 305,
+            "height": 331,
+            "offsetX": 18,
+            "offsetY": 44
+          },
+          {
+            "x": 940,
+            "y": 932,
+            "width": 305,
+            "height": 331,
+            "offsetX": 12,
+            "offsetY": 44
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-a-deep-blue.png",
+        "variant": "A",
+        "imageWidth": 1024,
+        "imageHeight": 1536,
+        "crop": [
+          90,
+          600,
+          840,
+          382
+        ],
+        "width": 101.5,
+        "height": 46.2,
+        "positions": [
+          {
+            "x": 121.25,
+            "y": 9.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 9.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 10.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 9.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 5.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 5.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 5.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 5.799999999999997
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/gibreal04-static-v2.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 887,
+        "canvasHeight": 887,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/gibreal04-static-v2.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 887,
+        "canvasHeight": 887,
+        "frames": [
+          {
+            "x": 887,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 45,
+            "offsetY": 0
+          }
+        ]
+      }
+    }
+  },
+  "gibreal05": {
+    "icon": "/assets/sprites/gibreal05-icon-v1.png",
+    "label": "GibReaL05 · Mac02 operations agent",
+    "description": "Pink bob, emerald eyes, sage hoodie and silver robotic arms. Awkward seated terminal work, cheerful leader-desk resting, and an inactive floor pose.",
+    "working": {
+      "src": "/assets/sprites/gibreal05-eight-v1.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 315,
+            "height": 344,
+            "offsetX": -28,
+            "offsetY": -5
+          },
+          {
+            "x": 315,
+            "y": 0,
+            "width": 310,
+            "height": 344,
+            "offsetX": -10,
+            "offsetY": -5
+          },
+          {
+            "x": 625,
+            "y": 0,
+            "width": 312,
+            "height": 344,
+            "offsetX": -4,
+            "offsetY": -5
+          },
+          {
+            "x": 937,
+            "y": 0,
+            "width": 317,
+            "height": 344,
+            "offsetX": -8,
+            "offsetY": -5
+          },
+          {
+            "x": 0,
+            "y": 344,
+            "width": 315,
+            "height": 326,
+            "offsetX": -28,
+            "offsetY": 14
+          },
+          {
+            "x": 315,
+            "y": 344,
+            "width": 310,
+            "height": 326,
+            "offsetX": -10,
+            "offsetY": 14
+          },
+          {
+            "x": 625,
+            "y": 344,
+            "width": 312,
+            "height": 326,
+            "offsetX": -4,
+            "offsetY": 14
+          },
+          {
+            "x": 937,
+            "y": 344,
+            "width": 317,
+            "height": 326,
+            "offsetX": -8,
+            "offsetY": 14
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-b.png",
+        "variant": "B",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "crop": [
+          25,
+          135,
+          1486,
+          735
+        ],
+        "width": 101.5,
+        "height": 50.05,
+        "positions": [
+          {
+            "x": 136.25,
+            "y": -36.05
+          },
+          {
+            "x": 135.25,
+            "y": -37.05
+          },
+          {
+            "x": 139.25,
+            "y": -37.05
+          },
+          {
+            "x": 142.25,
+            "y": -37.05
+          },
+          {
+            "x": 136.25,
+            "y": -27.049999999999997
+          },
+          {
+            "x": 135.25,
+            "y": -28.049999999999997
+          },
+          {
+            "x": 139.25,
+            "y": -28.049999999999997
+          },
+          {
+            "x": 142.25,
+            "y": -28.049999999999997
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/gibreal05-eight-v1.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 670,
+            "width": 315,
+            "height": 292,
+            "offsetX": -5,
+            "offsetY": 28
+          },
+          {
+            "x": 315,
+            "y": 670,
+            "width": 310,
+            "height": 292,
+            "offsetX": 12,
+            "offsetY": 28
+          },
+          {
+            "x": 625,
+            "y": 670,
+            "width": 312,
+            "height": 292,
+            "offsetX": 14,
+            "offsetY": 28
+          },
+          {
+            "x": 937,
+            "y": 670,
+            "width": 317,
+            "height": 292,
+            "offsetX": 14,
+            "offsetY": 28
+          },
+          {
+            "x": 0,
+            "y": 962,
+            "width": 315,
+            "height": 292,
+            "offsetX": -5,
+            "offsetY": 31
+          },
+          {
+            "x": 315,
+            "y": 962,
+            "width": 310,
+            "height": 292,
+            "offsetX": 12,
+            "offsetY": 31
+          },
+          {
+            "x": 625,
+            "y": 962,
+            "width": 312,
+            "height": 292,
+            "offsetX": 14,
+            "offsetY": 31
+          },
+          {
+            "x": 937,
+            "y": 962,
+            "width": 317,
+            "height": 292,
+            "offsetX": 14,
+            "offsetY": 31
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-a-deep-blue.png",
+        "variant": "A",
+        "imageWidth": 1024,
+        "imageHeight": 1536,
+        "crop": [
+          90,
+          600,
+          840,
+          382
+        ],
+        "width": 101.5,
+        "height": 46.2,
+        "positions": [
+          {
+            "x": 114.25,
+            "y": -8.200000000000003
+          },
+          {
+            "x": 120.25,
+            "y": -6.200000000000003
+          },
+          {
+            "x": 119.25,
+            "y": -10.200000000000003
+          },
+          {
+            "x": 114.25,
+            "y": -12.200000000000003
+          },
+          {
+            "x": 114.25,
+            "y": -9.200000000000003
+          },
+          {
+            "x": 120.25,
+            "y": -8.200000000000003
+          },
+          {
+            "x": 119.25,
+            "y": -10.200000000000003
+          },
+          {
+            "x": 114.25,
+            "y": -9.200000000000003
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/gibreal05-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 1000,
+        "canvasHeight": 1000,
+        "frames": [
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          },
+          {
+            "x": 120,
+            "y": 460,
+            "width": 940,
+            "height": 400,
+            "offsetX": 30,
+            "offsetY": 570
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/gibreal05-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 1000,
+        "canvasHeight": 1000,
+        "frames": [
+          {
+            "x": 1090,
+            "y": 70,
+            "width": 460,
+            "height": 790,
+            "offsetX": 270,
+            "offsetY": 180
+          }
+        ]
+      }
+    }
+  },
+  "muv01": {
+    "icon": "/assets/sprites/muv01-icon-v1.png",
+    "label": "Muv01 · Mac02 team lead",
+    "description": "Silver bob, orange-red eyes and a fitted black-and-gold uniform with plain shoulders. No cape or epaulettes. Terminal work, a window call and sleeping in the leader chair.",
+    "working": {
+      "src": "/assets/sprites/muv01-eight-v1.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1246,
+        "height": 1263,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 320,
+            "height": 326,
+            "offsetX": -46,
+            "offsetY": 13
+          },
+          {
+            "x": 320,
+            "y": 0,
+            "width": 305,
+            "height": 326,
+            "offsetX": -21,
+            "offsetY": 13
+          },
+          {
+            "x": 625,
+            "y": 0,
+            "width": 305,
+            "height": 326,
+            "offsetX": -23,
+            "offsetY": 13
+          },
+          {
+            "x": 930,
+            "y": 0,
+            "width": 316,
+            "height": 326,
+            "offsetX": -26,
+            "offsetY": 13
+          },
+          {
+            "x": 0,
+            "y": 326,
+            "width": 320,
+            "height": 310,
+            "offsetX": -46,
+            "offsetY": 25
+          },
+          {
+            "x": 320,
+            "y": 326,
+            "width": 305,
+            "height": 310,
+            "offsetX": -21,
+            "offsetY": 25
+          },
+          {
+            "x": 625,
+            "y": 326,
+            "width": 305,
+            "height": 310,
+            "offsetX": -23,
+            "offsetY": 25
+          },
+          {
+            "x": 930,
+            "y": 326,
+            "width": 316,
+            "height": 310,
+            "offsetX": -26,
+            "offsetY": 25
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-b.png",
+        "variant": "B",
+        "imageWidth": 1536,
+        "imageHeight": 1024,
+        "crop": [
+          25,
+          135,
+          1486,
+          735
+        ],
+        "width": 101.5,
+        "height": 50.05,
+        "positions": [
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -23.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -16.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -16.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -16.049999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -16.049999999999997
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/muv01-eight-v1.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1246,
+        "height": 1263,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 0,
+            "y": 636,
+            "width": 320,
+            "height": 293,
+            "offsetX": 0,
+            "offsetY": 43
+          },
+          {
+            "x": 320,
+            "y": 636,
+            "width": 305,
+            "height": 293,
+            "offsetX": 6,
+            "offsetY": 43
+          },
+          {
+            "x": 625,
+            "y": 636,
+            "width": 305,
+            "height": 293,
+            "offsetX": 7,
+            "offsetY": 43
+          },
+          {
+            "x": 930,
+            "y": 636,
+            "width": 316,
+            "height": 293,
+            "offsetX": 10,
+            "offsetY": 43
+          },
+          {
+            "x": 0,
+            "y": 929,
+            "width": 320,
+            "height": 334,
+            "offsetX": 3,
+            "offsetY": 37
+          },
+          {
+            "x": 320,
+            "y": 929,
+            "width": 305,
+            "height": 334,
+            "offsetX": 9,
+            "offsetY": 37
+          },
+          {
+            "x": 625,
+            "y": 929,
+            "width": 305,
+            "height": 334,
+            "offsetX": 11,
+            "offsetY": 37
+          },
+          {
+            "x": 930,
+            "y": 929,
+            "width": 316,
+            "height": 334,
+            "offsetX": 11,
+            "offsetY": 37
+          }
+        ]
+      },
+      "halo": {
+        "src": "/assets/items/halo-a-deep-blue.png",
+        "variant": "A",
+        "imageWidth": 1024,
+        "imageHeight": 1536,
+        "crop": [
+          90,
+          600,
+          840,
+          382
+        ],
+        "width": 101.5,
+        "height": 46.2,
+        "positions": [
+          {
+            "x": 121.25,
+            "y": 3.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 3.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 3.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": 3.799999999999997
+          },
+          {
+            "x": 121.25,
+            "y": -1.2000000000000028
+          },
+          {
+            "x": 121.25,
+            "y": -1.2000000000000028
+          },
+          {
+            "x": 121.25,
+            "y": -1.2000000000000028
+          },
+          {
+            "x": 121.25,
+            "y": -1.2000000000000028
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/muv01-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 887,
+        "canvasHeight": 887,
+        "frames": [
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/muv01-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 887,
+        "canvasHeight": 887,
+        "frames": [
+          {
+            "x": 887,
+            "y": 0,
+            "width": 887,
+            "height": 887,
+            "offsetX": 45,
+            "offsetY": 50
+          }
+        ]
+      }
+    }
+  },
+  "bbmango02": {
+    "icon": "/assets/sprites/bbmango02-icon-v1.png",
+    "label": "BBMango02 · Mango archivist",
+    "description": "Honey-gold side ponytail, red glasses and a white-and-gold floral uniform. Paper files, bored window-gazing and a motionless fallen-glasses pose.",
+    "working": {
+      "src": "/assets/sprites/bbmango02-eight-v2.png",
+      "fps": 4.8,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 25,
+            "y": 0,
+            "width": 310,
+            "height": 360,
+            "offsetX": 9.5,
+            "offsetY": -7
+          },
+          {
+            "x": 335,
+            "y": 0,
+            "width": 305,
+            "height": 360,
+            "offsetX": 13.0,
+            "offsetY": -7
+          },
+          {
+            "x": 640,
+            "y": 0,
+            "width": 305,
+            "height": 360,
+            "offsetX": 23.0,
+            "offsetY": -7
+          },
+          {
+            "x": 945,
+            "y": 0,
+            "width": 309,
+            "height": 360,
+            "offsetX": 21.5,
+            "offsetY": -7
+          },
+          {
+            "x": 25,
+            "y": 360,
+            "width": 310,
+            "height": 314,
+            "offsetX": 8.5,
+            "offsetY": 34
+          },
+          {
+            "x": 335,
+            "y": 360,
+            "width": 305,
+            "height": 314,
+            "offsetX": 13.5,
+            "offsetY": 34
+          },
+          {
+            "x": 640,
+            "y": 360,
+            "width": 305,
+            "height": 314,
+            "offsetX": 23.5,
+            "offsetY": 34
+          },
+          {
+            "x": 945,
+            "y": 360,
+            "width": 309,
+            "height": 314,
+            "offsetX": 25.0,
+            "offsetY": 33
+          }
+        ]
+      }
+    },
+    "resting": {
+      "src": "/assets/sprites/bbmango02-eight-v2.png",
+      "fps": 3.2,
+      "atlas": {
+        "width": 1254,
+        "height": 1254,
+        "canvasWidth": 344,
+        "canvasHeight": 344,
+        "frames": [
+          {
+            "x": 25,
+            "y": 674,
+            "width": 310,
+            "height": 276,
+            "offsetX": 4.0,
+            "offsetY": 67
+          },
+          {
+            "x": 335,
+            "y": 674,
+            "width": 305,
+            "height": 276,
+            "offsetX": 7.0,
+            "offsetY": 67
+          },
+          {
+            "x": 640,
+            "y": 674,
+            "width": 305,
+            "height": 276,
+            "offsetX": 22.0,
+            "offsetY": 67
+          },
+          {
+            "x": 945,
+            "y": 674,
+            "width": 309,
+            "height": 276,
+            "offsetX": 15.5,
+            "offsetY": 67
+          },
+          {
+            "x": 25,
+            "y": 950,
+            "width": 310,
+            "height": 304,
+            "offsetX": 3.0,
+            "offsetY": 72
+          },
+          {
+            "x": 335,
+            "y": 950,
+            "width": 305,
+            "height": 304,
+            "offsetX": 5.0,
+            "offsetY": 72
+          },
+          {
+            "x": 640,
+            "y": 950,
+            "width": 305,
+            "height": 304,
+            "offsetX": 7.5,
+            "offsetY": 72
+          },
+          {
+            "x": 945,
+            "y": 950,
+            "width": 309,
+            "height": 304,
+            "offsetX": 12.5,
+            "offsetY": 72
+          }
+        ]
+      }
+    },
+    "ceased": {
+      "src": "/assets/sprites/bbmango02-static-v2.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 1200,
+        "canvasHeight": 480,
+        "frames": [
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 380,
+            "width": 1195,
+            "height": 480,
+            "offsetX": 0,
+            "offsetY": 0
+          }
+        ]
+      }
+    },
+    "unknown": {
+      "src": "/assets/sprites/bbmango02-static-v1.png",
+      "fps": 1,
+      "still": true,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "canvasWidth": 1200,
+        "canvasHeight": 887,
+        "frames": [
+          {
+            "x": 1195,
+            "y": 0,
+            "width": 579,
+            "height": 887,
+            "offsetX": 310,
+            "offsetY": 0
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "gibreal01": {
+    "working": "Standing, operating a holographic projection screen. No smile or facial expression.",
+    "resting": "Sitting in a chair watching a romantic sunset movie with a couple holding hands, drinking cola through a straw; heart icon overhead. No facial expression.",
+    "ceased": "Sitting motionless in a chair with head lowered. No facial expression.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral, expressionless still pose; activity is unknown."
+  },
+  "gibreal02": {
+    "working": "Standing, holding and reading a pad; one hand adjusting glasses.",
+    "resting": "Sitting in a chair, reading a holographic projection screen.",
+    "ceased": "Standing motionless with a bowed back, slumped shoulders and lowered head; eyes dark and unlit.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral still pose; activity is unknown."
+  },
+  "gibreal03": {
+    "working": "Seated on the Mac01 right-hand chair, neck cable connected to the adjacent server rack; holographic screen, hands resting in lap.",
+    "resting": "Standing in front of a server rack, checking the infrastructure.",
+    "ceased": "Knees bent inward together, lower legs folded outward to either side, feet pointing away from hips; slumped shoulders, upper body hunched, head lowered.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral still pose; activity is unknown."
+  },
+  "muv01": {
+    "working": "Standing to the right of the leader desk, operating holographic controls facing left; Halo B and anger symbol.",
+    "resting": "Standing by the Mac02 window, holding one ear while speaking; Halo A and ellipsis.",
+    "ceased": "Sleeping in the Mac02 leader chair with eyes closed; ZZZ overhead.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral still pose; activity is unknown."
+  },
+  "gibreal04": {
+    "working": "Facing right, operating the holographic terminal; Halo B.",
+    "resting": "Resting shyly in a random open spot on the left side of the office; blue halo.",
+    "ceased": "Sitting in a chair with head lowered, doing nothing.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral still pose; activity is unknown."
+  },
+  "gibreal05": {
+    "working": "Seated on the Mac02 right chair, operating a holographic terminal awkwardly; Halo B.",
+    "resting": "Sitting on the front-right edge of the leader desk, happily swinging her feet; heart and Halo A overhead.",
+    "ceased": "Lying motionless on the right office floor with eyes closed.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral still pose; activity is unknown."
+  },
+  "bbmango01": {
+    "working": "Standing, holding a large cardboard box in front of her; sweating icon overhead.",
+    "resting": "Seated on her assigned office chair, relaxing with a gentle blink and small breathing movement.",
+    "ceased": "Sitting, eyes white, ghost leaving mouth; completely exhausted.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral idle pose. Still frame: activity is unknown."
+  },
+  "bbmango02": {
+    "working": "Seated on her assigned middle office chair, checking and turning paper files.",
+    "resting": "Standing by the window aisle, looking outside with a bored expression.",
+    "ceased": "Lying face-down on the floor, red glasses fallen ahead, one hand pointing toward them. Motionless.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing quietly with red glasses and a clipboard; activity is unknown."
+  },
+  "bbmango03": {
+    "working": "Facing a holographic projection screen and drawing on it with a long stylus; expressive ω mouth.",
+    "resting": "Seated on her assigned office chair, reading and gently scrolling a tablet; heart above her head and her signature ω smile.",
+    "ceased": "Sitting motionless on her office chair, eyes closed, strained ω smile, purple forehead shading and a tiny blood trickle connected to the mouth corner.",
+    "communicating": "No separate animation; neutral still pose.",
+    "unknown": "Standing in a neutral still pose with the signature ω mouth; activity is unknown."
+  }
+}
