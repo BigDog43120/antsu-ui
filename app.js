@@ -92,7 +92,7 @@ function header(){
   return `<header class="topbar"><button class="mobile-menu" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="${S.navOpen}">☰</button><div class="breadcrumbs">${toplink('ANTSU','/building')}<span>/</span>${escapeHTML(SECTION_LABELS[r.kind]||'UNKNOWN')}<span>/</span><b>${escapeHTML(name)}</b></div><div class="top-actions"><span class="live-chip"><i class="live-dot"></i>${S.data.liveMachines} / 3 CONNECTED</span><span class="top-date" id="clock">--:--:-- JST</span>${S.loginRequired?'<button class="logout" id="logout" title="Sign out">↪</button>':''}</div></header>`;
 }
 function statbar(){return `<div class="statbar">
-  <div><span>NETWORK</span><b>${S.data.liveMachines?`${S.data.liveMachines} CONNECTED`:'PREVIEW / OFFLINE'}</b></div>
+  <div><span>NETWORK</span><b>${S.data.liveMachines?`${S.data.liveMachines} CONNECTED`:'AWAITING REPORTS / OFFLINE'}</b></div>
   <div><span>MACHINES</span><b>03 <small>REGISTERED</small></b></div>
   <div><span>AGENTS</span><b>09 <small>REGISTERED</small></b></div>
   <div><span>SKY SIMULATION</span><b>${S.theme.toUpperCase()} MODE</b></div>
@@ -416,14 +416,14 @@ function render(){
  else if(r.kind==='profiles')content=agent(r.id)?profilePage(agent(r.id)):notFound();
  else content=notFound();
  const focused=document.activeElement;const focusKey=focused?.dataset;
- $('#app').innerHTML=`<a class="skip-link" href="#main-content">Skip to content</a><div class="app-shell">${sidebar()}<div class="main-shell">${header()}<main id="main-content"><div class="hosted-preview-banner" role="status">UI PREVIEW · LIVE BACKEND NOT CONNECTED</div>${S.refreshError?'<div class="connection-warning" role="status">Connection interrupted. Showing the last received snapshot.</div>':''}${content}</main><footer>ANTSU CONTROL INTERFACE <span>3 MACHINES / 9 AGENTS / 1 WORLD</span><span>A/2 + BBMango02</span></footer></div></div>`;
+ $('#app').innerHTML=`<a class="skip-link" href="#main-content">Skip to content</a><div class="app-shell">${sidebar()}<div class="main-shell">${header()}<main id="main-content"><div class="hosted-preview-banner" role="status">CLOUD STATUS · THREE INDEPENDENT MACS</div>${S.refreshError?'<div class="connection-warning" role="status">Connection interrupted. Showing the last received snapshot.</div>':''}${content}</main><footer>ANTSU CONTROL INTERFACE <span>3 MACHINES / 9 AGENTS / 1 WORLD</span><span>A/2 + BBMango02</span></footer></div></div>`;
  $('#menu-toggle')?.addEventListener('click',()=>{S.navOpen=!S.navOpen;render()});
  document.querySelectorAll('[data-theme]').forEach(el=>el.addEventListener('click',()=>themeStorage(el.dataset.theme)));
  document.querySelectorAll('[data-preview-id]').forEach(el=>el.addEventListener('click',()=>{S.preview[el.dataset.previewId]=el.dataset.previewStatus;render()}));
  document.querySelectorAll('[data-memory-tab]').forEach(el=>el.addEventListener('click',()=>{S.tab[el.dataset.agentId]=el.dataset.memoryTab;render()}));
  $('#actors-toggle')?.addEventListener('click',()=>{S.showActors=!S.showActors;localStorage.setItem('antsu-actors',S.showActors?'shown':'hidden');render();$('#actors-toggle')?.focus()});
  $('#motion-toggle')?.addEventListener('click',()=>{S.motion=!S.motion;localStorage.setItem('antsu-motion',S.motion?'playing':'paused');render();$('#motion-toggle')?.focus()});
- $('#logout')?.addEventListener('click',async()=>{await fetch('/api/logout',{method:'POST'});S.auth=false;loginPage()});
+ $('#logout')?.addEventListener('click',()=>cloudLogout());
  $('#agent-search')?.addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.agent-nav a').forEach(a=>{a.hidden=!a.textContent.toLowerCase().includes(q)});});
  document.querySelectorAll('img.actor-sprite').forEach(img=>img.addEventListener('error',()=>{img.replaceWith(Object.assign(document.createElement('span'),{className:'sprite-missing',textContent:'SPRITE UNAVAILABLE'}));},{once:true}));
  document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',()=>{S.navOpen=false;document.querySelector('.sidebar')?.classList.remove('opened')}));
@@ -433,31 +433,55 @@ function render(){
  tickClock();
 }
 function tickClock(){const el=$('#clock');if(el)el.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date())+' JST';}
-function loginPage(){document.body.dataset.sky=S.theme;$('#app').innerHTML=`<div class="login-wrap"><div class="login-card"><div class="login-glyph">A▟</div><span class="page-eyebrow">SECURE ACCESS / ANTSU NETWORK</span><h1>Enter the tower.</h1><p>Authorized operators only. Authentication happens on the local server.</p><form id="login-form"><label>OPERATOR ID<input type="text" name="username" autocomplete="username" placeholder="Operator ID" required></label><label>ACCESS KEY<input type="password" name="password" autocomplete="current-password" placeholder="Password" required></label><button type="submit">AUTHENTICATE ↗</button><span class="login-error">${escapeHTML(S.message)}</span></form></div></div>`;
- $('#login-form').addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(e.target);try{const res=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({username:f.get('username'),password:f.get('password')})});if(!res.ok)throw Error('Invalid credentials');S.auth=true;S.message='';S.lastSnapshot='';await loadState();}catch(err){S.message=err.message;loginPage();}});
+const API_ORIGIN="https://antsu-api.antsu-cloud-api.workers.dev";
+// Included only in the GitHub Pages cloud build. API_ORIGIN contains no secret.
+let viewerKey = '';
+let cloudInitialized = false;
+function cloudLogout() {
+ viewerKey='';S.auth=false;S.data=null;S.lastSnapshot='';S.message='';S.refreshError=false;
+ try{sessionStorage.removeItem('antsu-viewer-key')}catch{}
+ loginPage();
+}
+function loginPage(){
+ document.body.dataset.sky=S.theme;
+ $('#app').innerHTML=`<div class="login-wrap"><div class="login-card"><div class="login-glyph">A▟</div><span class="page-eyebrow">SECURE ACCESS / ANTSU NETWORK</span><h1>Enter the tower.</h1><p>Enter your read-only dashboard access key. Your three Macs report independently to the cloud.</p><form id="login-form"><label>VIEWER ACCESS KEY<input type="password" name="password" autocomplete="current-password" placeholder="Dashboard access key" required></label><button type="submit">OPEN DASHBOARD ↗</button><span class="login-error" role="status">${escapeHTML(S.message)}</span></form></div></div>`;
+ $('#login-form').addEventListener('submit',async e=>{
+  e.preventDefault();if(S.busy)return;
+  viewerKey=String(new FormData(e.target).get('password')||'').trim();
+  S.message='';await loadState();
+ });
 }
 async function loadState(){
- if(S.busy)return;S.busy=true;
+ if(S.busy||!viewerKey)return;S.busy=true;const requestKey=viewerKey;
  try{
-  const res=await fetch('/api/state',{cache:'no-store',signal:AbortSignal.timeout(10000)});
-  if(res.status===401){S.auth=false;S.message='';loginPage();return;}
-  if(!res.ok)throw Error(`${res.status}`);
-  const next=await res.json();const snapshot=JSON.stringify({...next,serverTime:undefined});
+  const response=await fetch(API_ORIGIN+'/api/state',{headers:{Authorization:'Bearer '+requestKey},cache:'no-store',credentials:'omit',redirect:'error',signal:AbortSignal.timeout(10000)});
+  if(requestKey!==viewerKey)return;
+  if(response.status===401){cloudLogout();S.message='Access key not accepted. Use the viewer key, not a collector key.';loginPage();return;}
+  if(!response.ok)throw Error('API unavailable');
+  const next=await response.json();if(requestKey!==viewerKey)return;
+  const snapshot=JSON.stringify({...next,serverTime:undefined});
   const changed=snapshot!==S.lastSnapshot||S.refreshError||!S.auth;
-  S.lastSnapshot=snapshot;S.data=next;S.auth=true;S.refreshError=false;
+  S.data=next;S.lastSnapshot=snapshot;S.auth=true;S.refreshError=false;S.message='';
+  try{sessionStorage.setItem('antsu-viewer-key',viewerKey)}catch{}
   if(changed)render();
- }catch(err){
-  console.error('Unable to refresh state',err);
-  if(S.data){S.refreshError=true;render();}else{$('#app').innerHTML='<div class="boot">ANTSU server unavailable.<br><button id="retry-load">Retry connection</button></div>';$('#retry-load').onclick=()=>loadState();}
+ }catch{
+  if(requestKey!==viewerKey)return;
+  if(S.data){
+   S.refreshError=true;S.data={...S.data,liveMachines:0,machines:S.data.machines.map(m=>({...m,connection:'offline'})),agents:S.data.agents.map(a=>({...a,status:'unknown',source:'stale'}))};render();
+  }else{S.message='Cannot reach the status service. Please retry.';loginPage();}
  }finally{S.busy=false;}
 }
 async function init(){
- const responses=await Promise.all(['./demo-state.json','./sprite-manifest.json','./action-manifest.json'].map(url=>fetch(url)));
- if(responses.some(r=>!r.ok))throw Error('UI assets could not be loaded.');
- const [snapshot,sprites,actions]=await Promise.all(responses.map(r=>r.json()));
- S.data=snapshot;S.sprites=sprites;Object.assign(ACTION,actions);S.auth=true;S.loginRequired=false;
- render();setInterval(tickClock,1000);
+ if(cloudInitialized)return;cloudInitialized=true;
+ const responses=await Promise.all(['./sprite-manifest.json','./action-manifest.json'].map(url=>fetch(url)));
+ if(responses.some(r=>!r.ok))throw Error('Artwork manifests could not be loaded');
+ const [sprites,actions]=await Promise.all(responses.map(r=>r.json()));S.sprites=sprites;Object.assign(ACTION,actions);S.loginRequired=true;
+ try{viewerKey=sessionStorage.getItem('antsu-viewer-key')||''}catch{}
+ if(viewerKey)await loadState();else loginPage();
+ setInterval(()=>{if(S.auth&&!document.hidden)loadState()},15000);setInterval(tickClock,1000);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden&&S.auth)loadState()});
 }
+
 window.addEventListener('hashchange',()=>{S.navOpen=false;render();window.scrollTo(0,0)});
 window.addEventListener('keydown',e=>{if(e.key==='Escape'&&S.navOpen){S.navOpen=false;render();$('#menu-toggle')?.focus();}});
 init().catch(e=>{$('#app').textContent='ANTSU initialization failed: '+e.message});

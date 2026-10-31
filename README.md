@@ -1,15 +1,7 @@
 # ANTSU UI
 
-Static frontend for ANTSU Headquarters, exported from A/2 + BBMango02.
+GitHub Pages frontend: https://www.antsuui.xyz
 
-Includes the tower, three rooms, nine agents, portraits, animations and profile navigation. All displayed activity is clearly labeled preview. No collector keys, live snapshots, personal memory files or backend code are included.
+Live status API: https://antsu-api.antsu-cloud-api.workers.dev
 
-## GitHub Pages
-
-Publish main branch / root in repository Settings → Pages. Custom domain: www.antsuui.xyz. Configure the custom domain in Pages settings as well as retaining CNAME; the file alone does not activate domain hosting.
-
-After the domain is attached in GitHub, set DNS CNAME www → BigDog43120.github.io (without a repository name). Enable Enforce HTTPS when GitHub's certificate is ready.
-
-## Live data
-
-The Mac backend stays on the Mac mini. This export currently runs in preview mode. Connecting live data requires the backend HTTPS URL, cross-origin API access and authenticated viewer access; never put the collector ingest key in this repository or browser JavaScript. No live backend has been connected by this export.
+All three Macs report independently to Cloudflare Workers + D1. No Mac backend or Tailscale is needed. Enter a separately supplied read-only viewer key to view status. Each collector has its own write-only key; no credentials are published here. Reports older than 90 seconds become offline/unknown. The animation studio remains an art preview, not a task control.

@@ -119,9 +119,9 @@
       "id": "bbmango01",
       "name": "BBMango01",
       "machine": "bbm",
-      "isMain": false,
+      "isMain": true,
       "position": "Production desk",
-      "duty": "To be configured",
+      "duty": "Primary BBM coordinator",
       "status": "unknown",
       "source": "demo"
     },
