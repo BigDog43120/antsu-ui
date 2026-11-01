@@ -328,6 +328,18 @@ function roomPage(m){
  <div class="personnel-grid">${a.map(x=>`<div class="personnel-card"><div class="personnel-heading"><a href="#/agents/${x.id}">${avatar(x,'p-avatar')}<span><b>${escapeHTML(x.name)}</b><small>${escapeHTML(x.position)}</small></span></a>${statusTag(x)}</div><p>${escapeHTML(ACTION[x.id]?.[agentStatus(x)]||'No scene mapping')}</p>${S.sprites?.[x.id]?.icon?`<a class="sprite-studio-link" href="#/characters/${x.id}">View animation study ↗</a>`:''}<div class="state-controls" role="group" aria-label="Preview ${escapeHTML(x.name)} state">${ANIMATION_STATES.map(st=>`<button data-preview-id="${x.id}" data-preview-status="${st}" ${x.source!=='demo'?'disabled title="Status controlled by collector"':''} aria-pressed="${agentStatus(x)===st}" class="${agentStatus(x)===st?'selected':''}">${escapeHTML(st)}</button>`).join('')}</div></div>`).join('')}</div></div>`;
 }
 const chips=v=>Array.isArray(v)?v.length?v.map(t=>`<span class="square-chip">${fmt(typeof t==='object'?JSON.stringify(t):t)}</span>`).join(''):'<span class="placeholder">None reported</span>':`<span class="placeholder">Awaiting collector data</span>`;
+function missionItems(value,kind){
+ if(value===undefined||value===null)return '<p class="mission-empty">No feed connected.</p>';
+ const items=Array.isArray(value)?value:[value];
+ if(!items.length)return '<p class="mission-empty">None reported.</p>';
+ return `<ol class="mission-list">${items.map((item,index)=>{
+  const object=item&&typeof item==='object'&&!Array.isArray(item);
+  const raw=object?'':String(item??'').trim();
+  const title=object?item.name||item.title||item.mission||item.label||`${kind} ${index+1}`:raw.split(/\r?\n/,1)[0]||`${kind} ${index+1}`;
+  const details=object?Object.entries(item).filter(([key])=>!['name','title','mission','label'].includes(key)).map(([key,val])=>`<div><dt>${escapeHTML(key)}</dt><dd>${fmt(val)}</dd></div>`).join(''):raw!==title?`<p class="mission-text">${escapeHTML(raw.slice(title.length).trim())}</p>`:'';
+  return `<li class="mission-item"><span class="mission-number">${String(index+1).padStart(2,'0')}</span><div class="mission-content"><strong>${escapeHTML(title)}</strong>${object?`<dl class="mission-fields">${details}</dl>`:details}</div></li>`;
+ }).join('')}</ol>`;
+}
 const panel=(title,icon,contents,extra='')=>`<section class="detail-panel"><div class="detail-panel-heading"><span>${icon} ${escapeHTML(title)}</span>${extra}</div><div class="detail-panel-body">${contents}</div></section>`;
 function fieldRows(rows){return `<div class="detail-rows">${rows.map(([l,v])=>`<div><span>${escapeHTML(l)}</span><strong>${fmt(v)}</strong></div>`).join('')}</div>`;}
 function agentPage(a){
@@ -341,7 +353,7 @@ function agentPage(a){
  ${panel('Skills & skill packages','⬡',`<h4>SKILLS</h4><div class="chip-wrap">${chips(a.skills)}</div><h4>PACKAGES</h4><div class="chip-wrap">${chips(a.skillPackages)}</div>`)}
  ${panel('Plugins & capabilities','▣',`<h4>PLUGINS</h4><div class="chip-wrap">${chips(a.plugins)}</div><h4>CAPABILITIES</h4><div class="chip-wrap">${chips(a.capabilities)}</div>`)}
  ${panel('Available LLM models','◉',`<div class="chip-wrap">${chips(a.models)}</div>`)}
- ${panel('Heartbeats & cron missions','◷',`<h4>HEARTBEATS</h4><div class="chip-wrap">${chips(a.heartbeats)}</div><h4>CRON TASKS</h4><div class="chip-wrap">${chips(a.cron)}</div>`)}
+ <div class="missions-wide">${panel('Schedules & heartbeat reports','◷',`<div class="mission-layout"><section class="mission-group"><div class="mission-group-head"><h4>SCHEDULED MISSIONS</h4><span>${Array.isArray(a.cron)?a.cron.length:0} REPORTED</span></div><p>Cron tasks reported by this agent.</p>${missionItems(a.cron,'Mission')}</section><section class="mission-group"><div class="mission-group-head"><h4>HEARTBEAT REPORT</h4><span>${Array.isArray(a.heartbeats)?a.heartbeats.length:0} ITEMS</span></div><p>Heartbeat text can include work notes. Mission names need structured data from the Mac collector.</p>${missionItems(a.heartbeats,'Heartbeat item')}</section></div>`)}</div>
  ${panel('User information & channels','⇄',fieldRows([['User info',a.userInfo],['Channels',a.channels]]))}
  ${panel('Memory & characteristics','✧',`<p class="detail-note">Read-only SOUL.md, AGENTS.md, local memory, and optional MemOS. Sensitive content is never collected by default.</p><a class="action-link" href="#/profiles/${a.id}">OPEN MEMORY ARCHIVE <span>↗</span></a>`,'<span class="muted">PAGE 5</span>')}
  </div></div>`;
