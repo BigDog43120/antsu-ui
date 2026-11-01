@@ -350,10 +350,10 @@ function profilePage(a){
  const tabs=['SOUL.md','AGENTS.md','MEMORY.md','MemOS'];const tab=S.tab[a.id]||tabs[0];
  const cloud=typeof loadProfile==='function',profile=S.profileData[a.id],entry=tab==='MemOS'?profile?.memOS:profile?.documents?.[tab];
  const hasDoc=entry?.state==='available'||(!cloud&&(tab==='MemOS'?a.memOS!=null:typeof a.docs?.[tab]==='string'));
- const content=cloud?(entry?.state==='available'?entry.text:entry?.state==='oversize'?'Source exceeds the configured upload limit.':entry?.state==='missing'?'Source file not found.':entry?.state==='unavailable'?'Source is not connected or cannot be read.':profile?.error||'Enter the separate profile access key to load this archive.'):(tab==='MemOS'?(a.memOS==null?'MemOS adapter not connected.':typeof a.memOS==='string'?a.memOS:JSON.stringify(a.memOS,null,2)):(a.docs?.[tab]??'Document not available in this local preview.'));
+ const content=cloud?(entry?.state==='available'?entry.text:entry?.state==='oversize'?'Source exceeds the configured upload limit.':entry?.state==='missing'?'Source file not found.':entry?.state==='unavailable'?'Source is not connected or cannot be read.':profile?.error||'Enter the six-digit profile PIN to load this archive.'):(tab==='MemOS'?(a.memOS==null?'MemOS adapter not connected.':typeof a.memOS==='string'?a.memOS:JSON.stringify(a.memOS,null,2)):(a.docs?.[tab]??'Document not available in this local preview.'));
  return `<div class="page memory-page"><div class="page-eyebrow">05 / CHARACTERISTICS & MEMORY</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Memory archive</span></h1><p>Read-only source documents. Nothing on this page edits the agent.</p></div><a class="pill-outline" href="#/agents/${a.id}">← RETURN TO DOSSIER</a></div>
- <div class="memory-panel"><div class="memory-meta"><span>ARCHIVE / ${escapeHTML(a.id.toUpperCase())}</span><span class="conn ${hasDoc?'online':'demo'}">${hasDoc?'● DOCUMENT LOADED':'◇ NOT CONNECTED'}</span></div>${cloud&&!profile?.documents?`<form id="profile-key-form" data-agent-id="${a.id}"><label>PROFILE ACCESS KEY <input type="password" name="profileKey" autocomplete="off" required></label><button type="submit">LOAD ARCHIVE</button></form>`:''}<div class="memory-tabs">${tabs.map(t=>`<button class="${tab===t?'active':''}" data-memory-tab="${escapeHTML(t)}" data-agent-id="${a.id}">${escapeHTML(t)}</button>`).join('')}</div><pre class="memory-content" id="memory-content">${escapeHTML(content)}</pre></div>
- <div class="info-box memory-warning"><strong>DATA ACCESS POLICY</strong><p>Only explicitly configured agent files are synchronized. The profile requires a separate access key; MemOS remains unavailable until its read-only adapter is connected. Do not place credentials in profile source files.</p></div></div>`;
+ <div class="memory-panel"><div class="memory-meta"><span>ARCHIVE / ${escapeHTML(a.id.toUpperCase())}</span><span class="conn ${hasDoc?'online':'demo'}">${hasDoc?'● DOCUMENT LOADED':'◇ NOT CONNECTED'}</span></div>${cloud&&!profile?.documents?`<form id="profile-key-form" data-agent-id="${a.id}"><label>6-DIGIT PROFILE PIN <input type="password" name="profileKey" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="off" required></label><button type="submit">LOAD ARCHIVE</button></form>`:''}<div class="memory-tabs">${tabs.map(t=>`<button class="${tab===t?'active':''}" data-memory-tab="${escapeHTML(t)}" data-agent-id="${a.id}">${escapeHTML(t)}</button>`).join('')}</div><pre class="memory-content" id="memory-content">${escapeHTML(content)}</pre></div>
+ <div class="info-box memory-warning"><strong>DATA ACCESS POLICY</strong><p>Only explicitly configured agent files are synchronized. The profile requires dashboard login and a six-digit PIN; MemOS remains unavailable until its read-only adapter is connected. Do not place credentials in profile source files.</p></div></div>`;
 }
 function characterStage(a,st){
  if(a.id==='bbmango02'){
@@ -452,9 +452,10 @@ async function loadProfile(id){
  if(!profileViewerKey||profileLoading.has(id)||S.profileData[id])return;
  profileLoading.add(id);const key=profileViewerKey;
  try{
-  const response=await fetch(API_ORIGIN+'/api/profiles/'+encodeURIComponent(id),{headers:{Authorization:'Bearer '+key},cache:'no-store',credentials:'omit',redirect:'error',signal:AbortSignal.timeout(10000)});
+  const response=await fetch(API_ORIGIN+'/api/profiles/'+encodeURIComponent(id),{headers:{Authorization:'Bearer '+viewerKey,'X-Profile-PIN':key},cache:'no-store',credentials:'omit',redirect:'error',signal:AbortSignal.timeout(10000)});
   if(key!==profileViewerKey)return;
-  if(response.status===401){profileViewerKey='';try{sessionStorage.removeItem('antsu-profile-key')}catch{}S.profileData[id]={error:'Profile key not accepted.'};}
+  if(response.status===401){profileViewerKey='';try{sessionStorage.removeItem('antsu-profile-key')}catch{}S.profileData[id]={error:'Profile PIN not accepted.'};}
+  else if(response.status===429)S.profileData[id]={error:'Too many attempts. Try again in a minute.'};
   else if(!response.ok)S.profileData[id]={error:'Profile service unavailable.'};
   else S.profileData[id]=await response.json();
  }catch{if(key===profileViewerKey)S.profileData[id]={error:'Could not load profile.'};}
