@@ -29,6 +29,14 @@ const fmt=(v,fallback=empty)=>{
   if(typeof v==='object')return escapeHTML(JSON.stringify(v));
   return escapeHTML(String(v));
 };
+const sizeGB=bytes=>Number.isFinite(bytes)&&bytes>=0?`${(bytes/1e9).toFixed(bytes<1e10?1:0)} GB`:'Not reported';
+const capacity=(used,total)=>Number.isFinite(used)&&Number.isFinite(total)&&total>0&&used>=0&&used<=total?`${sizeGB(used)} / ${sizeGB(total)}`:'Not reported';
+function storageRows(t){
+ const internal=t.storage?.internal;
+ const external=t.storage?.external;
+ const externalText=Array.isArray(external)?external.length?external.map(d=>`${d.name?`${escapeHTML(d.name)}: `:''}${capacity(d.usedBytes,d.totalBytes)}`).join('<br>'):'None reported':'Not reported';
+ return `<div class="fact-rows storage-facts"><div><span>RAM used / total</span><b>${capacity(t.memoryUsedBytes,t.memoryTotalBytes)}</b></div><div><span>Internal storage</span><b>${internal?capacity(internal.usedBytes,internal.totalBytes):'Not reported'}</b></div><div><span>External storage</span><b>${externalText}</b></div></div>`;
+}
 const machine=id=>S.data.machines.find(m=>m.id===id);
 const agent=id=>S.data.agents.find(a=>a.id===id);
 const agentsOf=id=>S.data.agents.filter(a=>a.machine===id);
@@ -98,7 +106,7 @@ function statbar(){return `<div class="statbar">
   <div><span>SKY SIMULATION</span><b>${S.theme.toUpperCase()} MODE</b></div>
 </div>`;}
 function machineFacts(m){const t=m.telemetry||{};return `<div class="fact-rows">
-  ${[['OpenClaw',t.openclawVersion],['Local LLM',t.localLLM],['Safety',t.safety],['Remote',t.remote],['Other AI',t.otherAI],['Cloud',t.cloud],['Tailscale',t.tailscale],['Memory',t.memorySystem],['Other plugins',t.otherPlugins]].map(([k,v])=>`<div><span>${escapeHTML(k)}</span><b>${fmt(v)}</b></div>`).join('')}
+  ${[['OpenClaw',t.openclawVersion],['Local LLM',t.localLLM],['Safety',t.safety],['Remote',t.remote],['Other AI',t.otherAI],['Cloud',t.cloud],['Tailscale',t.tailscale],['Memory system',t.memorySystem],['Other plugins',t.otherPlugins]].map(([k,v])=>`<div><span>${escapeHTML(k)}</span><b>${fmt(v)}</b></div>`).join('')}
   </div>`;}
 // Artwork landmarks are normalized coordinates shared by both day/night images.
 // The painted facade is illustrative; roster floor numbers remain authoritative.
@@ -323,7 +331,7 @@ function roomScene(m){
 function roomPage(m){
  const a=agentsOf(m.id);return `<div class="page room-page"><div class="page-eyebrow">02 / FLOOR ${String(m.floor).padStart(2,'0')} / ${escapeHTML(m.name.toUpperCase())}</div><div class="page-title-row"><div><h1>${escapeHTML(m.name)} <span>· ${escapeHTML(m.label)}</span></h1><p>A pixel-art workspace for ${a.length} agents. Select an agent to open their dossier.</p></div><span class="pill-outline">${m.connection==='online'?'● NODE CONNECTED':m.connection==='offline'?'◌ NODE OFFLINE':'◇ PREVIEW ENVIRONMENT'}</span></div>
  <div class="room-grid"><div class="room-main"><div class="panel-title"><span>◈ ${escapeHTML(m.name.toUpperCase())} / PIXEL ROOM</span><div class="scene-tools"><button class="motion-toggle" id="actors-toggle" aria-pressed="${S.showActors}" aria-label="Character avatars">${S.showActors?'Hide avatars':'Show avatars'}</button><button class="motion-toggle" id="motion-toggle" aria-pressed="${S.motion}" aria-label="Ambient animation">${S.motion?'Ⅱ Pause motion':'▷ Play motion'}</button></div></div>${roomScene(m)}<div class="room-caption">Original room art · Ambient effects are decorative · All nine agent avatars have custom sprites and portraits.</div></div>
- <div class="machine-side"><div class="panel-title"><span>▣ MACHINE STATUS</span><span class="conn ${m.connection}">${m.connection.toUpperCase()}</span></div><div class="machine-details">${machineFacts(m)}<div class="machine-metrics"><div><span>HOST</span><b>${fmt(m.telemetry.hostname)}</b></div><div><span>MEMORY USED</span><b>${m.telemetry.memoryUsedPercent===undefined?'—':`${fmt(m.telemetry.memoryUsedPercent)}%`}</b></div><div><span>LAST CONTACT</span><b>${m.lastSeen?new Date(m.lastSeen).toLocaleTimeString('en-GB',{timeZone:'Asia/Tokyo'})+' JST':'NEVER'}</b></div></div></div></div></div>
+ <div class="machine-side"><div class="panel-title"><span>▣ MACHINE STATUS</span><span class="conn ${m.connection}">${m.connection.toUpperCase()}</span></div><div class="machine-details">${machineFacts(m)}${storageRows(m.telemetry||{})}<div class="machine-metrics"><div><span>HOST</span><b>${fmt(m.telemetry.hostname)}</b></div><div><span>RAM LOAD</span><b>${m.telemetry.memoryUsedPercent===undefined?'—':`${fmt(m.telemetry.memoryUsedPercent)}%`}</b></div><div><span>LAST CONTACT</span><b>${m.lastSeen?new Date(m.lastSeen).toLocaleTimeString('en-GB',{timeZone:'Asia/Tokyo'})+' JST':'NEVER'}</b></div></div></div></div></div>
  <div class="section-heading"><div><h2>Room personnel</h2><p>Choose a status in preview mode to inspect the future animation mapping.</p></div></div>
  <div class="personnel-grid">${a.map(x=>`<div class="personnel-card"><div class="personnel-heading"><a href="#/agents/${x.id}">${avatar(x,'p-avatar')}<span><b>${escapeHTML(x.name)}</b><small>${escapeHTML(x.position)}</small></span></a>${statusTag(x)}</div><p>${escapeHTML(ACTION[x.id]?.[agentStatus(x)]||'No scene mapping')}</p>${S.sprites?.[x.id]?.icon?`<a class="sprite-studio-link" href="#/characters/${x.id}">View animation study ↗</a>`:''}<div class="state-controls" role="group" aria-label="Preview ${escapeHTML(x.name)} state">${ANIMATION_STATES.map(st=>`<button data-preview-id="${x.id}" data-preview-status="${st}" ${x.source!=='demo'?'disabled title="Status controlled by collector"':''} aria-pressed="${agentStatus(x)===st}" class="${agentStatus(x)===st?'selected':''}">${escapeHTML(st)}</button>`).join('')}</div></div>`).join('')}</div></div>`;
 }
@@ -342,6 +350,11 @@ function missionItems(value,kind){
 }
 const panel=(title,icon,contents,extra='')=>`<section class="detail-panel"><div class="detail-panel-heading"><span>${icon} ${escapeHTML(title)}</span>${extra}</div><div class="detail-panel-body">${contents}</div></section>`;
 function fieldRows(rows){return `<div class="detail-rows">${rows.map(([l,v])=>`<div><span>${escapeHTML(l)}</span><strong>${fmt(v)}</strong></div>`).join('')}</div>`;}
+function userInfoRows(v){
+ if(v===undefined)return fieldRows([['User info',undefined]]);
+ if(typeof v==='string')return fieldRows([['Summary',v]]);
+ return fieldRows([['Display name',v?.displayName],['Role',v?.role],['Team',v?.team],['Time zone',v?.timezone],['Summary',v?.summary]].filter(([,value])=>value!==undefined));
+}
 function agentPage(a){
  const m=machine(a.machine),st=agentStatus(a); const sessions=Array.isArray(a.sessions)?a.sessions:[];
  return `<div class="page agent-page"><div class="page-eyebrow">03 / INDIVIDUAL AGENT RECORD</div><div class="agent-hero"><div><span class="minor-serial">ANTSU / ${escapeHTML(m.name.toUpperCase())} / F${m.floor}</span><h1>${escapeHTML(a.name)}</h1><p>${escapeHTML(a.duty||'Duty not configured')}</p><div class="hero-tags">${statusTag(a)}<span class="square-chip">${escapeHTML(m.name)}</span>${a.isMain?'<span class="square-chip highlight">MAIN AGENT</span>':''}${S.sprites?.[a.id]?.icon?`<a class="square-chip" href="#/characters/${a.id}">ANIMATION STUDIO ↗</a>`:''}</div></div><div class="hero-avatar ${localAsset(S.sprites?.[a.id]?.icon)?'portrait-hero':''}"><span>${S.sprites?.[a.id]?.icon?'AGENT PORTRAIT':'AGENT FIGURE'}</span>${localAsset(S.sprites?.[a.id]?.icon)?avatar(a,'hero-portrait'):actorFigure(a,st)}<small>${S.sprites?.[a.id]?.icon?'PIXEL ART / STUDY 01':'PROTOTYPE / REPLACEABLE'}</small></div></div>
@@ -354,7 +367,7 @@ function agentPage(a){
  ${panel('Plugins & capabilities','▣',`<h4>PLUGINS</h4><div class="chip-wrap">${chips(a.plugins)}</div><h4>CAPABILITIES</h4><div class="chip-wrap">${chips(a.capabilities)}</div>`)}
  ${panel('Available LLM models','◉',`<div class="chip-wrap">${chips(a.models)}</div>`)}
  <div class="missions-wide">${panel('Schedules & heartbeat reports','◷',`<div class="mission-layout"><section class="mission-group"><div class="mission-group-head"><h4>SCHEDULED MISSIONS</h4><span>${Array.isArray(a.cron)?a.cron.length:0} REPORTED</span></div><p>Cron tasks reported by this agent.</p>${missionItems(a.cron,'Mission')}</section><section class="mission-group"><div class="mission-group-head"><h4>HEARTBEAT REPORT</h4><span>${Array.isArray(a.heartbeats)?a.heartbeats.length:0} ITEMS</span></div><p>Heartbeat text can include work notes. Mission names need structured data from the Mac collector.</p>${missionItems(a.heartbeats,'Heartbeat item')}</section></div>`)}</div>
- ${panel('User information & channels','⇄',fieldRows([['User info',a.userInfo],['Channels',a.channels]]))}
+ ${panel('User information & channels','⇄',`${userInfoRows(a.userInfo)}<h4>CHANNELS</h4><div class="chip-wrap">${chips(a.channels)}</div>`)}
  ${panel('Memory & characteristics','✧',`<p class="detail-note">Read-only SOUL.md, AGENTS.md, local memory, and optional MemOS. Sensitive content is never collected by default.</p><a class="action-link" href="#/profiles/${a.id}">OPEN MEMORY ARCHIVE <span>↗</span></a>`,'<span class="muted">PAGE 5</span>')}
  </div></div>`;
 }
