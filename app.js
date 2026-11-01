@@ -1,7 +1,7 @@
 const $=s=>document.querySelector(s);
 const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const empty='Not reported';
-const S={data:null, theme:localStorage.getItem('antsu-theme')||'night', navOpen:false, motion:localStorage.getItem('antsu-motion')!=='paused', showActors:localStorage.getItem('antsu-actors')!=='hidden', preview:{}, tab:{}, sprites:{}, refreshError:false, lastSnapshot:'', auth:false, loginRequired:false, busy:false, message:''};
+const S={data:null, theme:localStorage.getItem('antsu-theme')||'night', navOpen:false, motion:localStorage.getItem('antsu-motion')!=='paused', showActors:localStorage.getItem('antsu-actors')!=='hidden', preview:{}, tab:{}, profileData:{}, sprites:{}, refreshError:false, lastSnapshot:'', auth:false, loginRequired:false, busy:false, message:''};
 const MACHINE_IDS=['mac01','mac02','bbm'];
 const DEMO_STATUS=['working','resting','ceased'];
 const SECTION_LABELS={building:'TOWER OVERVIEW',machines:'MACHINE FLOOR',agents:'AGENT DOSSIER',profiles:'MEMORY ARCHIVE',characters:'CHARACTER STUDIO'};
@@ -348,11 +348,12 @@ function agentPage(a){
 }
 function profilePage(a){
  const tabs=['SOUL.md','AGENTS.md','MEMORY.md','MemOS'];const tab=S.tab[a.id]||tabs[0];
- const hasDoc=tab==='MemOS'?a.memOS!=null:typeof a.docs?.[tab]==='string';
- const content=tab==='MemOS'?(a.memOS==null?'MemOS adapter not connected. Configure an explicit read-only query later.':typeof a.memOS==='string'?a.memOS:JSON.stringify(a.memOS,null,2)):(a.docs?.[tab]??'Document not available. The collector only reads workspace documents when includeWorkspaceDocs is explicitly enabled.');
+ const cloud=typeof loadProfile==='function',profile=S.profileData[a.id],entry=tab==='MemOS'?profile?.memOS:profile?.documents?.[tab];
+ const hasDoc=entry?.state==='available'||(!cloud&&(tab==='MemOS'?a.memOS!=null:typeof a.docs?.[tab]==='string'));
+ const content=cloud?(entry?.state==='available'?entry.text:entry?.state==='oversize'?'Source exceeds the configured upload limit.':entry?.state==='missing'?'Source file not found.':entry?.state==='unavailable'?'Source is not connected or cannot be read.':profile?.error||'Enter the separate profile access key to load this archive.'):(tab==='MemOS'?(a.memOS==null?'MemOS adapter not connected.':typeof a.memOS==='string'?a.memOS:JSON.stringify(a.memOS,null,2)):(a.docs?.[tab]??'Document not available in this local preview.'));
  return `<div class="page memory-page"><div class="page-eyebrow">05 / CHARACTERISTICS & MEMORY</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Memory archive</span></h1><p>Read-only source documents. Nothing on this page edits the agent.</p></div><a class="pill-outline" href="#/agents/${a.id}">← RETURN TO DOSSIER</a></div>
- <div class="memory-panel"><div class="memory-meta"><span>ARCHIVE / ${escapeHTML(a.id.toUpperCase())}</span><span class="conn ${hasDoc?'online':'demo'}">${hasDoc?'● DOCUMENT LOADED':'◇ NOT CONNECTED'}</span></div><div class="memory-tabs">${tabs.map(t=>`<button class="${tab===t?'active':''}" data-memory-tab="${escapeHTML(t)}" data-agent-id="${a.id}">${escapeHTML(t)}</button>`).join('')}</div><pre class="memory-content" id="memory-content">${escapeHTML(content)}</pre></div>
- <div class="info-box memory-warning"><strong>DATA ACCESS POLICY</strong><p>Docs are opt-in, read-only and sent only from an explicitly configured workspace. Do not share API keys, auth profiles, raw config files or unredacted personal data through this dashboard.</p></div></div>`;
+ <div class="memory-panel"><div class="memory-meta"><span>ARCHIVE / ${escapeHTML(a.id.toUpperCase())}</span><span class="conn ${hasDoc?'online':'demo'}">${hasDoc?'● DOCUMENT LOADED':'◇ NOT CONNECTED'}</span></div>${cloud&&!profile?.documents?`<form id="profile-key-form" data-agent-id="${a.id}"><label>PROFILE ACCESS KEY <input type="password" name="profileKey" autocomplete="off" required></label><button type="submit">LOAD ARCHIVE</button></form>`:''}<div class="memory-tabs">${tabs.map(t=>`<button class="${tab===t?'active':''}" data-memory-tab="${escapeHTML(t)}" data-agent-id="${a.id}">${escapeHTML(t)}</button>`).join('')}</div><pre class="memory-content" id="memory-content">${escapeHTML(content)}</pre></div>
+ <div class="info-box memory-warning"><strong>DATA ACCESS POLICY</strong><p>Only explicitly configured agent files are synchronized. The profile requires a separate access key; MemOS remains unavailable until its read-only adapter is connected. Do not place credentials in profile source files.</p></div></div>`;
 }
 function characterStage(a,st){
  if(a.id==='bbmango02'){
@@ -421,6 +422,7 @@ function render(){
  document.querySelectorAll('[data-theme]').forEach(el=>el.addEventListener('click',()=>themeStorage(el.dataset.theme)));
  document.querySelectorAll('[data-preview-id]').forEach(el=>el.addEventListener('click',()=>{S.preview[el.dataset.previewId]=el.dataset.previewStatus;render()}));
  document.querySelectorAll('[data-memory-tab]').forEach(el=>el.addEventListener('click',()=>{S.tab[el.dataset.agentId]=el.dataset.memoryTab;render()}));
+ $('#profile-key-form')?.addEventListener('submit',e=>{e.preventDefault();if(typeof setProfileKey==='function')setProfileKey(String(new FormData(e.target).get('profileKey')||''),e.target.dataset.agentId)});
  $('#actors-toggle')?.addEventListener('click',()=>{S.showActors=!S.showActors;localStorage.setItem('antsu-actors',S.showActors?'shown':'hidden');render();$('#actors-toggle')?.focus()});
  $('#motion-toggle')?.addEventListener('click',()=>{S.motion=!S.motion;localStorage.setItem('antsu-motion',S.motion?'playing':'paused');render();$('#motion-toggle')?.focus()});
  $('#logout')?.addEventListener('click',()=>cloudLogout());
@@ -431,16 +433,32 @@ function render(){
  if(focusKey?.previewId)document.querySelector(`[data-preview-id="${focusKey.previewId}"][data-preview-status="${focusKey.previewStatus}"]`)?.focus();
  if(focusKey?.memoryTab)document.querySelector(`[data-memory-tab="${focusKey.memoryTab}"]`)?.focus();
  tickClock();
+ if(r.kind==='profiles'&&typeof loadProfile==='function'&&typeof profileViewerKey==='string'&&profileViewerKey&&!S.profileData[r.id])void loadProfile(r.id);
 }
 function tickClock(){const el=$('#clock');if(el)el.textContent=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Tokyo',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).format(new Date())+' JST';}
 const API_ORIGIN="https://antsu-api.antsu-cloud-api.workers.dev";
 // Included only in the GitHub Pages cloud build. API_ORIGIN contains no secret.
 let viewerKey = '';
+let profileViewerKey = '';
+const profileLoading = new Set();
 let cloudInitialized = false;
 function cloudLogout() {
- viewerKey='';S.auth=false;S.data=null;S.lastSnapshot='';S.message='';S.refreshError=false;
- try{sessionStorage.removeItem('antsu-viewer-key')}catch{}
+ viewerKey='';profileViewerKey='';S.profileData={};S.auth=false;S.data=null;S.lastSnapshot='';S.message='';S.refreshError=false;
+ try{sessionStorage.removeItem('antsu-viewer-key');sessionStorage.removeItem('antsu-profile-key')}catch{}
  loginPage();
+}
+function setProfileKey(key,id){profileViewerKey=key.trim();S.profileData={};try{sessionStorage.setItem('antsu-profile-key',profileViewerKey)}catch{}if(profileViewerKey)void loadProfile(id);}
+async function loadProfile(id){
+ if(!profileViewerKey||profileLoading.has(id)||S.profileData[id])return;
+ profileLoading.add(id);const key=profileViewerKey;
+ try{
+  const response=await fetch(API_ORIGIN+'/api/profiles/'+encodeURIComponent(id),{headers:{Authorization:'Bearer '+key},cache:'no-store',credentials:'omit',redirect:'error',signal:AbortSignal.timeout(10000)});
+  if(key!==profileViewerKey)return;
+  if(response.status===401){profileViewerKey='';try{sessionStorage.removeItem('antsu-profile-key')}catch{}S.profileData[id]={error:'Profile key not accepted.'};}
+  else if(!response.ok)S.profileData[id]={error:'Profile service unavailable.'};
+  else S.profileData[id]=await response.json();
+ }catch{if(key===profileViewerKey)S.profileData[id]={error:'Could not load profile.'};}
+ finally{profileLoading.delete(id);if(S.auth&&route().kind==='profiles'&&route().id===id)render();}
 }
 function loginPage(){
  document.body.dataset.sky=S.theme;
@@ -476,7 +494,7 @@ async function init(){
  const responses=await Promise.all(['./sprite-manifest.json','./action-manifest.json'].map(url=>fetch(url)));
  if(responses.some(r=>!r.ok))throw Error('Artwork manifests could not be loaded');
  const [sprites,actions]=await Promise.all(responses.map(r=>r.json()));S.sprites=sprites;Object.assign(ACTION,actions);S.loginRequired=true;
- try{viewerKey=sessionStorage.getItem('antsu-viewer-key')||''}catch{}
+ try{viewerKey=sessionStorage.getItem('antsu-viewer-key')||'';profileViewerKey=sessionStorage.getItem('antsu-profile-key')||''}catch{}
  if(viewerKey)await loadState();else loginPage();
  setInterval(()=>{if(S.auth&&!document.hidden)loadState()},15000);setInterval(tickClock,1000);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&S.auth)loadState()});
