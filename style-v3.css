@@ -13,3 +13,10 @@ body{background:#0e171d;color:#e7ece7}button,input{accent-color:#c4dd9f}a,button
 .storage-facts{margin-top:20px;padding-top:16px;border-top:1px solid #2d2945}
 .storage-facts b{overflow-wrap:anywhere;line-height:1.5;text-align:right}
 @media(min-width:721px) and (max-width:1260px){.storage-facts{margin-top:0;padding-top:0;border-top:0}.machine-metrics{grid-column:1/-1}}
+.user-profile .detail-rows{margin:0}
+.user-profile .detail-rows>div{display:grid;grid-template-columns:minmax(90px,38%) minmax(0,1fr)}
+.user-profile .detail-rows strong{min-width:0;overflow-wrap:anywhere;text-align:right}
+.user-profile .placeholder{margin:0;line-height:1.6}
+.user-profile-note{margin-top:14px;padding-top:12px;border-top:1px solid #344448}
+.user-profile-note summary{cursor:pointer;color:#b6cdd0;font:11px/1.5 system-ui,sans-serif}
+.user-profile-note p{margin:10px 0 0;color:#c7d5ce;font-size:12px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}

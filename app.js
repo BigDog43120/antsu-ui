@@ -350,10 +350,12 @@ function missionItems(value,kind){
 }
 const panel=(title,icon,contents,extra='')=>`<section class="detail-panel"><div class="detail-panel-heading"><span>${icon} ${escapeHTML(title)}</span>${extra}</div><div class="detail-panel-body">${contents}</div></section>`;
 function fieldRows(rows){return `<div class="detail-rows">${rows.map(([l,v])=>`<div><span>${escapeHTML(l)}</span><strong>${fmt(v)}</strong></div>`).join('')}</div>`;}
-function userInfoRows(v){
- if(v===undefined)return fieldRows([['User info',undefined]]);
- if(typeof v==='string')return fieldRows([['Summary',v]]);
- return fieldRows([['Display name',v?.displayName],['Role',v?.role],['Team',v?.team],['Time zone',v?.timezone],['Summary',v?.summary]].filter(([,value])=>value!==undefined));
+function userInfoPanel(v){
+ const data=typeof v==='string'?{summary:v}:v||{};
+ const rows=[['Display name',data.displayName],['Role',data.role],['Team',data.team],['Time zone',data.timezone]].filter(([,value])=>typeof value==='string'&&value.trim());
+ const rawSummary=typeof data.summary==='string'?data.summary.trim():'';
+ const summary=/^USER\.md\b|\b(?:open[_ -]?id|feishu\s*id|chat\s*id)\b|飞书\s*ID/i.test(rawSummary)?'':rawSummary;
+ return `<div class="user-profile">${rows.length?fieldRows(rows):'<p class="placeholder">No approved user details reported.</p>'}${summary?`<details class="user-profile-note"><summary>Profile note</summary><p>${escapeHTML(summary)}</p></details>`:''}</div>`;
 }
 function agentPage(a){
  const m=machine(a.machine),st=agentStatus(a); const sessions=Array.isArray(a.sessions)?a.sessions:[];
@@ -367,7 +369,8 @@ function agentPage(a){
  ${panel('Plugins & capabilities','▣',`<h4>PLUGINS</h4><div class="chip-wrap">${chips(a.plugins)}</div><h4>CAPABILITIES</h4><div class="chip-wrap">${chips(a.capabilities)}</div>`)}
  ${panel('Available LLM models','◉',`<div class="chip-wrap">${chips(a.models)}</div>`)}
  <div class="missions-wide">${panel('Schedules & heartbeat reports','◷',`<div class="mission-layout"><section class="mission-group"><div class="mission-group-head"><h4>SCHEDULED MISSIONS</h4><span>${Array.isArray(a.cron)?a.cron.length:0} REPORTED</span></div><p>Cron tasks reported by this agent.</p>${missionItems(a.cron,'Mission')}</section><section class="mission-group"><div class="mission-group-head"><h4>HEARTBEAT REPORT</h4><span>${Array.isArray(a.heartbeats)?a.heartbeats.length:0} ITEMS</span></div><p>Heartbeat text can include work notes. Mission names need structured data from the Mac collector.</p>${missionItems(a.heartbeats,'Heartbeat item')}</section></div>`)}</div>
- ${panel('User information & channels','⇄',`${userInfoRows(a.userInfo)}<h4>CHANNELS</h4><div class="chip-wrap">${chips(a.channels)}</div>`)}
+ ${panel('User information','⇄',userInfoPanel(a.userInfo))}
+ ${panel('Channels','◈',`<div class="chip-wrap">${chips(a.channels)}</div>`)}
  ${panel('Memory & characteristics','✧',`<p class="detail-note">Read-only SOUL.md, AGENTS.md, local memory, and optional MemOS. Sensitive content is never collected by default.</p><a class="action-link" href="#/profiles/${a.id}">OPEN MEMORY ARCHIVE <span>↗</span></a>`,'<span class="muted">PAGE 5</span>')}
  </div></div>`;
 }
