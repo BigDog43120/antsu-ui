@@ -350,14 +350,6 @@ function missionItems(value,kind){
 }
 const panel=(title,icon,contents,extra='')=>`<section class="detail-panel"><div class="detail-panel-heading"><span>${icon} ${escapeHTML(title)}</span>${extra}</div><div class="detail-panel-body">${contents}</div></section>`;
 function fieldRows(rows){return `<div class="detail-rows">${rows.map(([l,v])=>`<div><span>${escapeHTML(l)}</span><strong>${fmt(v)}</strong></div>`).join('')}</div>`;}
-function userInfoPanel(v){
- const data=typeof v==='string'?{summary:v}:v||{};
- const rows=[['Display name',data.displayName],['Role',data.role],['Team',data.team],['Time zone',data.timezone]].filter(([,value])=>typeof value==='string'&&value.trim());
- const people=Array.isArray(data.knownPeople)?data.knownPeople.filter(name=>typeof name==='string'&&name.trim()).slice(0,12):[];
- const rawSummary=typeof data.summary==='string'?data.summary.trim():'';
- const summary=/^USER\.md\b|\b(?:open[_ -]?id|feishu\s*id|chat\s*id)\b|飞书\s*ID/i.test(rawSummary)?'':rawSummary;
- return `<div class="user-profile">${rows.length?fieldRows(rows):!people.length&&!summary?'<p class="placeholder">No approved user details reported.</p>':''}${people.length?`<div class="user-people"><span>OTHER KNOWN PEOPLE</span><ul>${people.map(name=>`<li>${escapeHTML(name)}</li>`).join('')}</ul></div>`:''}${summary?`<details class="user-profile-note"><summary>Profile note</summary><p>${escapeHTML(summary)}</p></details>`:''}</div>`;
-}
 function agentPage(a){
  const m=machine(a.machine),st=agentStatus(a); const sessions=Array.isArray(a.sessions)?a.sessions:[];
  return `<div class="page agent-page"><div class="page-eyebrow">03 / INDIVIDUAL AGENT RECORD</div><div class="agent-hero"><div><span class="minor-serial">ANTSU / ${escapeHTML(m.name.toUpperCase())} / F${m.floor}</span><h1>${escapeHTML(a.name)}</h1><p>${escapeHTML(a.duty||'Duty not configured')}</p><div class="hero-tags">${statusTag(a)}<span class="square-chip">${escapeHTML(m.name)}</span>${a.isMain?'<span class="square-chip highlight">MAIN AGENT</span>':''}${S.sprites?.[a.id]?.icon?`<a class="square-chip" href="#/characters/${a.id}">ANIMATION STUDIO ↗</a>`:''}</div></div><div class="hero-avatar ${localAsset(S.sprites?.[a.id]?.icon)?'portrait-hero':''}"><span>${S.sprites?.[a.id]?.icon?'AGENT PORTRAIT':'AGENT FIGURE'}</span>${localAsset(S.sprites?.[a.id]?.icon)?avatar(a,'hero-portrait'):actorFigure(a,st)}<small>${S.sprites?.[a.id]?.icon?'PIXEL ART / STUDY 01':'PROTOTYPE / REPLACEABLE'}</small></div></div>
@@ -371,16 +363,15 @@ function agentPage(a){
  ${panel('Available LLM models','◉',`<div class="chip-wrap">${chips(a.models)}</div>`)}
  <div class="missions-wide">${panel('Schedules & heartbeat reports','◷',`<div class="mission-layout"><section class="mission-group"><div class="mission-group-head"><h4>SCHEDULED MISSIONS</h4><span>${Array.isArray(a.cron)?a.cron.length:0} REPORTED</span></div><p>Cron tasks reported by this agent.</p>${missionItems(a.cron,'Mission')}</section><section class="mission-group"><div class="mission-group-head"><h4>HEARTBEAT REPORT</h4><span>${Array.isArray(a.heartbeats)?a.heartbeats.length:0} ITEMS</span></div><p>Heartbeat text can include work notes. Mission names need structured data from the Mac collector.</p>${missionItems(a.heartbeats,'Heartbeat item')}</section></div>`)}</div>
  ${panel('Channels','◈',`<div class="chip-wrap">${chips(a.channels)}</div>`)}
- ${panel('Memory & characteristics','✧',`<p class="detail-note">User information, read-only SOUL.md, AGENTS.md, local memory, and optional MemOS.</p><a class="action-link" href="#/profiles/${a.id}">OPEN PROFILE & MEMORY <span>↗</span></a>`,'<span class="muted">PAGE 5</span>')}
+ ${panel('Memory & characteristics','✧',`<p class="detail-note">Read-only SOUL.md, AGENTS.md, MEMORY.md, USER.md, and optional MemOS.</p><a class="action-link" href="#/profiles/${a.id}">OPEN PROFILE & MEMORY <span>↗</span></a>`,'<span class="muted">PAGE 5</span>')}
  </div></div>`;
 }
 function profilePage(a){
- const tabs=['SOUL.md','AGENTS.md','MEMORY.md','MemOS'];const tab=S.tab[a.id]||tabs[0];
+ const tabs=['SOUL.md','AGENTS.md','MEMORY.md','USER.md','MemOS'];const tab=S.tab[a.id]||tabs[0];
  const cloud=typeof loadProfile==='function',profile=S.profileData[a.id],entry=tab==='MemOS'?profile?.memOS:profile?.documents?.[tab];
  const hasDoc=entry?.state==='available'||(!cloud&&(tab==='MemOS'?a.memOS!=null:typeof a.docs?.[tab]==='string'));
  const content=cloud?(entry?.state==='available'?entry.text:entry?.state==='oversize'?'Source exceeds the configured upload limit.':entry?.state==='missing'?'Source file not found.':entry?.state==='unavailable'?'Source is not connected or cannot be read.':profile?.error||'Enter the six-digit profile PIN to load this archive.'):(tab==='MemOS'?(a.memOS==null?'MemOS adapter not connected.':typeof a.memOS==='string'?a.memOS:JSON.stringify(a.memOS,null,2)):(a.docs?.[tab]??'Document not available in this local preview.'));
- return `<div class="page memory-page"><div class="page-eyebrow">05 / CHARACTERISTICS & MEMORY</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Memory & characteristics</span></h1><p>User information and read-only source documents. Nothing on this page edits the agent.</p></div><a class="pill-outline" href="#/agents/${a.id}">← RETURN TO DOSSIER</a></div>
- <div class="memory-user-info">${panel('User information','⇄',userInfoPanel(a.userInfo))}</div>
+ return `<div class="page memory-page"><div class="page-eyebrow">05 / CHARACTERISTICS & MEMORY</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Memory & characteristics</span></h1><p>Read-only source documents. Nothing on this page edits the agent.</p></div><a class="pill-outline" href="#/agents/${a.id}">← RETURN TO DOSSIER</a></div>
  <div class="memory-panel"><div class="memory-meta"><span>ARCHIVE / ${escapeHTML(a.id.toUpperCase())}</span><span class="conn ${hasDoc?'online':'demo'}">${hasDoc?'● DOCUMENT LOADED':'◇ NOT CONNECTED'}</span></div>${cloud&&!profile?.documents?`<form id="profile-key-form" data-agent-id="${a.id}"><label>6-DIGIT PROFILE PIN <input type="password" name="profileKey" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="off" required></label><button type="submit">LOAD ARCHIVE</button></form>`:''}<div class="memory-tabs">${tabs.map(t=>`<button class="${tab===t?'active':''}" data-memory-tab="${escapeHTML(t)}" data-agent-id="${a.id}">${escapeHTML(t)}</button>`).join('')}</div><pre class="memory-content" id="memory-content">${escapeHTML(content)}</pre></div>
  <div class="info-box memory-warning"><strong>DATA ACCESS POLICY</strong><p>Only explicitly configured agent files are synchronized. The profile requires dashboard login and a six-digit PIN; MemOS remains unavailable until its read-only adapter is connected. Do not place credentials in profile source files.</p></div></div>`;
 }
