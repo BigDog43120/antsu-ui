@@ -353,9 +353,10 @@ function fieldRows(rows){return `<div class="detail-rows">${rows.map(([l,v])=>`<
 function userInfoPanel(v){
  const data=typeof v==='string'?{summary:v}:v||{};
  const rows=[['Display name',data.displayName],['Role',data.role],['Team',data.team],['Time zone',data.timezone]].filter(([,value])=>typeof value==='string'&&value.trim());
+ const people=Array.isArray(data.knownPeople)?data.knownPeople.filter(name=>typeof name==='string'&&name.trim()).slice(0,12):[];
  const rawSummary=typeof data.summary==='string'?data.summary.trim():'';
  const summary=/^USER\.md\b|\b(?:open[_ -]?id|feishu\s*id|chat\s*id)\b|飞书\s*ID/i.test(rawSummary)?'':rawSummary;
- return `<div class="user-profile">${rows.length?fieldRows(rows):'<p class="placeholder">No approved user details reported.</p>'}${summary?`<details class="user-profile-note"><summary>Profile note</summary><p>${escapeHTML(summary)}</p></details>`:''}</div>`;
+ return `<div class="user-profile">${rows.length?fieldRows(rows):!people.length&&!summary?'<p class="placeholder">No approved user details reported.</p>':''}${people.length?`<div class="user-people"><span>OTHER KNOWN PEOPLE</span><ul>${people.map(name=>`<li>${escapeHTML(name)}</li>`).join('')}</ul></div>`:''}${summary?`<details class="user-profile-note"><summary>Profile note</summary><p>${escapeHTML(summary)}</p></details>`:''}</div>`;
 }
 function agentPage(a){
  const m=machine(a.machine),st=agentStatus(a); const sessions=Array.isArray(a.sessions)?a.sessions:[];

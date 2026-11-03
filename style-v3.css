@@ -20,3 +20,7 @@ body{background:#0e171d;color:#e7ece7}button,input{accent-color:#c4dd9f}a,button
 .user-profile-note{margin-top:14px;padding-top:12px;border-top:1px solid #344448}
 .user-profile-note summary{cursor:pointer;color:#b6cdd0;font:11px/1.5 system-ui,sans-serif}
 .user-profile-note p{margin:10px 0 0;color:#c7d5ce;font-size:12px;line-height:1.6;white-space:pre-wrap;overflow-wrap:anywhere}
+.user-people{margin-top:16px;padding-top:13px;border-top:1px solid #344448}
+.user-people>span{color:#9fb9b5;font:9px monospace;letter-spacing:.08em}
+.user-people ul{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:10px 0 0;padding:0}
+.user-people li{padding:6px 9px;background:#213238;border:1px solid #44605a;color:#dce9dc;font-size:11px;overflow-wrap:anywhere}
