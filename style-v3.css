@@ -24,3 +24,5 @@ body{background:#0e171d;color:#e7ece7}button,input{accent-color:#c4dd9f}a,button
 .user-people>span{color:#9fb9b5;font:9px monospace;letter-spacing:.08em}
 .user-people ul{display:flex;flex-wrap:wrap;gap:7px;list-style:none;margin:10px 0 0;padding:0}
 .user-people li{padding:6px 9px;background:#213238;border:1px solid #44605a;color:#dce9dc;font-size:11px;overflow-wrap:anywhere}
+.memory-user-info{margin-bottom:18px}
+.memory-user-info .detail-panel{max-width:none}
