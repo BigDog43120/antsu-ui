@@ -1,7 +1,7 @@
 {
   "bbmango01": {
     "icon": "/assets/sprites/bbmango01-icon-v3.png",
-    "label": "BBMango01 · Mango assistant",
+    "label": "BBMango01 \u00b7 Mango assistant",
     "working": {
       "src": "/assets/sprites/bbmango01-eight-v2.png",
       "fps": 6.153846153846154,
@@ -255,8 +255,8 @@
   },
   "bbmango03": {
     "icon": "/assets/sprites/bbmango03-icon-v1.png",
-    "label": "BBMango03 · Mango designer",
-    "description": "Golden bob, white-and-gold coat and expressive ω smile. Holographic drawing, tablet reading and a seated exhausted pose.",
+    "label": "BBMango03 \u00b7 Mango designer",
+    "description": "Golden bob, white-and-gold coat and expressive \u03c9 smile. Holographic drawing, tablet reading and a seated exhausted pose.",
     "working": {
       "src": "/assets/sprites/bbmango03-eight-v1.png",
       "fps": 6.153846153846154,
@@ -509,80 +509,112 @@
   },
   "gibreal01": {
     "icon": "/assets/sprites/gibreal01-icon-v4.png",
-    "label": "GibReaL01 · Mac01 main agent",
+    "label": "GibReaL01 \u00b7 Mac01 main agent",
     "description": "Pink bob and purple streak, teal eyes, red-and-gold qipao and ivory mechanical limbs. Expressionless hologram work, movie and cola rest, and a motionless lowered-head pose.",
     "working": {
-      "src": "/assets/sprites/gibreal01-eight-v1.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/gibreal01-working-twelve-v1.png",
+      "fps": 9.23076923076923,
       "atlas": {
-        "width": 1254,
-        "height": 1254,
-        "canvasWidth": 344,
-        "canvasHeight": 344,
+        "width": 1448,
+        "height": 1086,
+        "canvasWidth": 400,
+        "canvasHeight": 400,
         "frames": [
           {
             "x": 0,
             "y": 0,
-            "width": 330,
-            "height": 323,
-            "offsetX": 3,
-            "offsetY": 14
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
-            "x": 330,
+            "x": 362,
             "y": 0,
-            "width": 310,
-            "height": 323,
-            "offsetX": 30,
-            "offsetY": 14
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
-            "x": 640,
+            "x": 724,
             "y": 0,
-            "width": 320,
-            "height": 323,
-            "offsetX": 35,
-            "offsetY": 14
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
-            "x": 960,
+            "x": 1086,
             "y": 0,
-            "width": 294,
-            "height": 323,
-            "offsetX": 29,
-            "offsetY": 14
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
             "x": 0,
-            "y": 323,
-            "width": 330,
-            "height": 312,
-            "offsetX": 3.5,
-            "offsetY": 27
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
-            "x": 330,
-            "y": 323,
-            "width": 310,
-            "height": 312,
-            "offsetX": 29.5,
-            "offsetY": 26
+            "x": 362,
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
-            "x": 640,
-            "y": 323,
-            "width": 320,
-            "height": 312,
-            "offsetX": 31,
-            "offsetY": 26
+            "x": 724,
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           },
           {
-            "x": 960,
-            "y": 323,
-            "width": 294,
-            "height": 312,
-            "offsetX": 28.5,
-            "offsetY": 26
+            "x": 1086,
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
+          },
+          {
+            "x": 0,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
+          },
+          {
+            "x": 362,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
+          },
+          {
+            "x": 724,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
+          },
+          {
+            "x": 1086,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": 36,
+            "offsetY": 29
           }
         ]
       },
@@ -597,116 +629,164 @@
           1486,
           735
         ],
-        "width": 101.5,
-        "height": 50.05,
+        "width": 118.02,
+        "height": 58.2,
         "positions": [
           {
-            "x": 97.25,
-            "y": -8.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 96.25,
-            "y": -10.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 95.25,
-            "y": -8.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 90.25,
-            "y": -8.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 97.75,
-            "y": -5.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 95.75,
-            "y": -7.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 90.25,
-            "y": -6.05
+            "x": 113,
+            "y": -3
           },
           {
-            "x": 88.75,
-            "y": -6.05
+            "x": 113,
+            "y": -3
+          },
+          {
+            "x": 113,
+            "y": -3
+          },
+          {
+            "x": 113,
+            "y": -3
+          },
+          {
+            "x": 113,
+            "y": -3
+          },
+          {
+            "x": 113,
+            "y": -3
           }
         ]
       }
     },
     "resting": {
-      "src": "/assets/sprites/gibreal01-romantic-rest-v1.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/gibreal01-resting-twelve-v1.png",
+      "fps": 9.23076923076923,
       "atlas": {
-        "width": 1254,
-        "height": 1254,
-        "canvasWidth": 344,
-        "canvasHeight": 344,
+        "width": 1448,
+        "height": 1086,
+        "canvasWidth": 400,
+        "canvasHeight": 400,
         "frames": [
           {
             "x": 0,
-            "y": 635,
-            "width": 330,
-            "height": 307,
-            "offsetX": -23,
-            "offsetY": 33
+            "y": 0,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
-            "x": 330,
-            "y": 635,
-            "width": 310,
-            "height": 307,
-            "offsetX": -1,
-            "offsetY": 33
+            "x": 362,
+            "y": 0,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
-            "x": 640,
-            "y": 635,
-            "width": 320,
-            "height": 307,
-            "offsetX": 1.5,
-            "offsetY": 33
+            "x": 724,
+            "y": 0,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
-            "x": 960,
-            "y": 635,
-            "width": 294,
-            "height": 307,
-            "offsetX": 5,
-            "offsetY": 33
+            "x": 1086,
+            "y": 0,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
             "x": 0,
-            "y": 942,
-            "width": 330,
-            "height": 312,
-            "offsetX": -25,
-            "offsetY": 36
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
-            "x": 330,
-            "y": 942,
-            "width": 310,
-            "height": 312,
-            "offsetX": -2.5,
-            "offsetY": 36
+            "x": 362,
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
-            "x": 640,
-            "y": 942,
-            "width": 320,
-            "height": 312,
-            "offsetX": 0,
-            "offsetY": 36
+            "x": 724,
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           },
           {
-            "x": 960,
-            "y": 942,
-            "width": 294,
-            "height": 312,
-            "offsetX": 5,
-            "offsetY": 36
+            "x": 1086,
+            "y": 362,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
+          },
+          {
+            "x": 0,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
+          },
+          {
+            "x": 362,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
+          },
+          {
+            "x": 724,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
+          },
+          {
+            "x": 1086,
+            "y": 724,
+            "width": 362,
+            "height": 362,
+            "offsetX": -30,
+            "offsetY": 25
           }
         ]
       },
@@ -721,40 +801,56 @@
           840,
           382
         ],
-        "width": 101.5,
-        "height": 46.2,
+        "width": 118.02,
+        "height": 53.72,
         "positions": [
           {
-            "x": 41.25,
-            "y": 2.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 43.25,
-            "y": 2.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 45.75,
-            "y": 2.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 40.25,
-            "y": 2.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 39.25,
-            "y": 4.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 41.75,
-            "y": 3.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 44.25,
-            "y": 4.8
+            "x": 49,
+            "y": -12
           },
           {
-            "x": 40.25,
-            "y": 4.8
+            "x": 49,
+            "y": -12
+          },
+          {
+            "x": 49,
+            "y": -12
+          },
+          {
+            "x": 49,
+            "y": -12
+          },
+          {
+            "x": 49,
+            "y": -12
+          },
+          {
+            "x": 49,
+            "y": -12
           }
         ]
       }
@@ -860,7 +956,7 @@
   },
   "gibreal03": {
     "icon": "/assets/sprites/gibreal03-icon-v2.png",
-    "label": "GibReaL03 · Mac01 systems agent",
+    "label": "GibReaL03 \u00b7 Mac01 systems agent",
     "description": "Dusty pink waves, teal eyes, cybernetic earpiece and white lace dress. Neural-link work, server inspection and a quiet folded-leg ceased pose.",
     "working": {
       "src": "/assets/sprites/gibreal03-eight-v2.png",
@@ -1211,7 +1307,7 @@
   },
   "gibreal02": {
     "icon": "/assets/sprites/gibreal02-icon-v1.png",
-    "label": "GibReaL02 · Mac01 research agent",
+    "label": "GibReaL02 \u00b7 Mac01 research agent",
     "description": "Dusty pink bob, white glasses, teal eyes and cyan hair clip. Charcoal suit with pink paw tie, tablet research and seated holographic reading.",
     "working": {
       "src": "/assets/sprites/gibreal02-eight-v1.png",
@@ -1562,7 +1658,7 @@
   },
   "gibreal04": {
     "icon": "/assets/sprites/gibreal04-icon-v3.png",
-    "label": "GibReaL04 · Mac02 operations agent",
+    "label": "GibReaL04 \u00b7 Mac02 operations agent",
     "description": "Long rose curls, teal eyes, heart choker, burgundy top and silver mechanical arms. Terminal operations, shy resting on the left office floor and a quiet seated ceased pose.",
     "working": {
       "src": "/assets/sprites/gibreal04-eight-v1.png",
@@ -1914,7 +2010,7 @@
   },
   "gibreal05": {
     "icon": "/assets/sprites/gibreal05-icon-v1.png",
-    "label": "GibReaL05 · Mac02 operations agent",
+    "label": "GibReaL05 \u00b7 Mac02 operations agent",
     "description": "Pink bob, emerald eyes, sage hoodie and silver robotic arms. Awkward seated terminal work, cheerful leader-desk resting, and an inactive floor pose.",
     "working": {
       "src": "/assets/sprites/gibreal05-eight-v1.png",
@@ -2265,7 +2361,7 @@
   },
   "muv01": {
     "icon": "/assets/sprites/muv01-icon-v1.png",
-    "label": "Muv01 · Mac02 team lead",
+    "label": "Muv01 \u00b7 Mac02 team lead",
     "description": "Silver bob, orange-red eyes and a fitted black-and-gold uniform with plain shoulders. No cape or epaulettes. Terminal work, a window call and sleeping in the leader chair.",
     "working": {
       "src": "/assets/sprites/muv01-eight-v1.png",
@@ -2616,7 +2712,7 @@
   },
   "bbmango02": {
     "icon": "/assets/sprites/bbmango02-icon-v1.png",
-    "label": "BBMango02 · Mango archivist",
+    "label": "BBMango02 \u00b7 Mango archivist",
     "description": "Honey-gold side ponytail, red glasses and a white-and-gold floral uniform. Paper files, bored window-gazing and a motionless fallen-glasses pose.",
     "working": {
       "src": "/assets/sprites/bbmango02-eight-v2.png",

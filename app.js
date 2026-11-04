@@ -73,7 +73,7 @@ function muv01Cue(st,p){
 }
 function atlasFigure(a,st,sprite){
  const at=sprite.atlas;
- if(!at||!Array.isArray(at.frames)||![1,4,8].includes(at.frames.length))return '';
+ if(!at||!Array.isArray(at.frames)||![1,4,8,12].includes(at.frames.length))return '';
  const numbers=[at.width,at.height,at.canvasWidth,at.canvasHeight];
  if(numbers.some(n=>!Number.isFinite(n)||n<=0||n>8192))return '';
  const valid=at.frames.every(f=>[f.x,f.y,f.width,f.height,f.offsetX??0,f.offsetY??0].every(Number.isFinite)&&f.x>=0&&f.y>=0&&f.width>0&&f.height>0&&f.x+f.width<=at.width&&f.y+f.height<=at.height);
@@ -94,7 +94,7 @@ function sidebar(){
     ${S.data.machines.map(m=>`<a class="side-item ${cur.kind==='machines'&&cur.id===m.id?'active':''}" href="#/machines/${m.id}"><span class="ico">${m.id==='bbm'?'▥':'▣'}</span>${escapeHTML(m.name)} <span class="tiny-floor">F${String(m.floor).padStart(2,'0')}</span></a>`).join('')}
     <div class="side-label extra">AGENTS <span>09</span></div>
     <label class="agent-search"><span>⌕</span><input id="agent-search" type="search" placeholder="Find an agent…" aria-label="Find an agent"></label><div class="agent-nav">${S.data.agents.map(a=>`<a class="side-item small ${cur.kind==='agents'&&cur.id===a.id?'active':''}" href="#/agents/${a.id}">${avatar(a)}<span>${escapeHTML(a.name)}</span>${a.isMain?'<span class="main-dot">●</span>':''}</a>`).join('')}</div>
-    <div class="side-bottom"><div class="side-label">PIXEL WORLD / SKY</div><div class="theme-buttons"><button class="${S.theme==='day'?'chosen':''}" data-theme="day" aria-pressed="${S.theme==='day'}">☀ DAY</button><button class="${S.theme==='night'?'chosen':''}" data-theme="night" aria-pressed="${S.theme==='night'}">☾ NIGHT</button></div><small class="side-foot">ANTSU-UI01 <span>A/2 + BBMango02</span></small></div>
+    <div class="side-bottom"><div class="side-label">PIXEL WORLD / SKY</div><div class="theme-buttons"><button class="${S.theme==='day'?'chosen':''}" data-theme="day" aria-pressed="${S.theme==='day'}">☀ DAY</button><button class="${S.theme==='night'?'chosen':''}" data-theme="night" aria-pressed="${S.theme==='night'}">☾ NIGHT</button></div><small class="side-foot">ANTSU-UI01 <span>A/0</span></small></div>
   </aside>`;
 }
 function header(){
@@ -202,7 +202,7 @@ function gibreal03Connection(){
 }
 const roomPositions=new Map();
 // Static poses share the approved action sprites' compact body proportions.
-// Hip anchors keep all eight seated frames attached to the actual furniture.
+// Hip anchors keep all seated frames attached to the actual furniture.
 function gibreal05Seat(width,hipX,hipY,roomX,roomY,area){
  const scale=1536*width/100/344;
  return {x:(roomX+(172-hipX)*scale)/15.36,y:(roomY+(344*.97-hipY)*scale)/10.24,width,mode:'seated',area};
@@ -421,7 +421,7 @@ function characterStage(a,st){
 }
 function characterPage(a){
  const states=ANIMATION_STATES;
- return `<div class="page character-page"><div class="page-eyebrow">CHARACTER ART / STUDY 01</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Animation studio</span></h1><p>Reference-based pixel art · Eight-frame action loops · Preview only</p></div><a class="pill-outline" href="#/machines/${a.machine}">← BACK TO ROOM</a></div>
+ return `<div class="page character-page"><div class="page-eyebrow">CHARACTER ART / STUDY 01</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Animation studio</span></h1><p>Reference-based pixel art · ${S.sprites[a.id].working.atlas.frames.length}-frame action loops · Preview only</p></div><a class="pill-outline" href="#/machines/${a.machine}">← BACK TO ROOM</a></div>
  <div class="character-toolbar"><div><strong>${escapeHTML(S.sprites[a.id].label||a.name)}</strong><p>${escapeHTML(S.sprites[a.id].description||'Reference-based pixel character.')}</p></div><button class="motion-toggle" id="motion-toggle" aria-pressed="${S.motion}" aria-label="Ambient animation">${S.motion?'Ⅱ Pause animation':'▷ Play animation'}</button></div>
  <section class="icon-preview"><div><h2>UI portrait</h2><p>Sidebar · Floor directory · Personnel card · Agent dossier</p></div><div class="icon-sizes">${[24,32,64,96].map(size=>`<div>${avatar(a,'sample-icon icon-'+size)}<small>${size} PX</small></div>`).join('')}</div></section>
  <div class="animation-grid">${states.map(st=>`<section class="animation-card"><div class="animation-card-title"><h2>${STATUS_LABEL[st]}</h2><span>${S.sprites[a.id][st].still||S.sprites[a.id][st].atlas?.frames.length===1?'STATIC':(S.sprites[a.id][st].atlas.frames.length/S.sprites[a.id][st].fps).toFixed(1)+' S LOOP'}</span></div>${characterStage(a,st)}<p>${escapeHTML(ACTION[a.id]?.[st]||'')}</p></section>`).join('')}</div>
@@ -440,7 +440,7 @@ function render(){
  else if(r.kind==='profiles')content=agent(r.id)?profilePage(agent(r.id)):notFound();
  else content=notFound();
  const focused=document.activeElement;const focusKey=focused?.dataset;
- $('#app').innerHTML=`<a class="skip-link" href="#main-content">Skip to content</a><div class="app-shell">${sidebar()}<div class="main-shell">${header()}<main id="main-content"><div class="hosted-preview-banner" role="status">CLOUD STATUS · THREE INDEPENDENT MACS</div>${S.refreshError?'<div class="connection-warning" role="status">Connection interrupted. Showing the last received snapshot.</div>':''}${content}</main><footer>ANTSU CONTROL INTERFACE <span>3 MACHINES / 9 AGENTS / 1 WORLD</span><span>A/2 + BBMango02</span></footer></div></div>`;
+ $('#app').innerHTML=`<a class="skip-link" href="#main-content">Skip to content</a><div class="app-shell">${sidebar()}<div class="main-shell">${header()}<main id="main-content"><div class="hosted-preview-banner" role="status">CLOUD STATUS · THREE INDEPENDENT MACS</div>${S.refreshError?'<div class="connection-warning" role="status">Connection interrupted. Showing the last received snapshot.</div>':''}${content}</main><footer>ANTSU CONTROL INTERFACE <span>3 MACHINES / 9 AGENTS / 1 WORLD</span><span>A/0</span></footer></div></div>`;
  $('#menu-toggle')?.addEventListener('click',()=>{S.navOpen=!S.navOpen;render()});
  document.querySelectorAll('[data-theme]').forEach(el=>el.addEventListener('click',()=>themeStorage(el.dataset.theme)));
  document.querySelectorAll('[data-preview-id]').forEach(el=>el.addEventListener('click',()=>{S.preview[el.dataset.previewId]=el.dataset.previewStatus;render()}));

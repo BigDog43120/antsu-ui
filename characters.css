@@ -10,9 +10,11 @@
 .pixel-room .placed-agent.standing-agent:has(.animation-halo) .agent-caption{bottom:117%}
 .atlas-animated .atlas-frame{animation:atlas-four var(--atlas-duration) steps(1,end) infinite;animation-delay:var(--frame-delay)}
 .atlas-animated.atlas-count-8 .atlas-frame{animation-name:atlas-eight}
+.atlas-animated.atlas-count-12 .atlas-frame{animation-name:atlas-twelve}
 .actor-atlas.motion-paused .atlas-frame,.motion-paused .actor-atlas .atlas-frame{animation-play-state:paused!important}
 @keyframes atlas-four{0%,24.999%{opacity:1}25%,100%{opacity:0}}
 @keyframes atlas-eight{0%{opacity:1}12.5%,100%{opacity:0}}
+@keyframes atlas-twelve{0%{opacity:1}8.333333333333%,100%{opacity:0}}
 .has-portrait{overflow:hidden;display:inline-grid!important;place-items:center;padding:0!important;background:#463324!important;border-color:#987645!important}
 .ui-portrait{display:block;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
 .nav-avatar.has-portrait{width:24px;height:24px;flex:none}.mini-agents .mini-avatar{width:24px;height:24px}.p-avatar.has-portrait{width:38px;height:38px}
