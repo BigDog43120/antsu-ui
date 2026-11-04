@@ -512,7 +512,7 @@
     "label": "GibReaL01 \u00b7 Mac01 main agent",
     "description": "Pink bob and purple streak, teal eyes, red-and-gold qipao and ivory mechanical limbs. Expressionless hologram work, movie and cola rest, and a motionless lowered-head pose.",
     "working": {
-      "src": "/assets/sprites/gibreal01-working-twelve-v1.png",
+      "src": "/assets/sprites/gibreal01-working-twelve-v2.png",
       "fps": 9.23076923076923,
       "atlas": {
         "width": 1448,
