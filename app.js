@@ -6,9 +6,10 @@ const MACHINE_IDS=['mac01','mac02','bbm'];
 const DEMO_STATUS=['working','resting','ceased'];
 const SECTION_LABELS={building:'TOWER OVERVIEW',machines:'MACHINE FLOOR',agents:'AGENT DOSSIER',profiles:'MEMORY ARCHIVE',characters:'CHARACTER STUDIO'};
 const STATUS_LABEL={working:'Working',resting:'Resting',ceased:'Ceased',communicating:'Communicating',unknown:'Unknown'};
-const ANIMATION_STATES=['working','resting','ceased','unknown'];
-// Collectors may still report communication; it has no separate animated pose.
-const poseState=st=>st==='communicating'?'unknown':st;
+const ANIMATION_STATES=['working','resting','ceased'];
+const PREVIEW_STATES=[...ANIMATION_STATES,'unknown'];
+// Unknown activity uses the ceased art and placement. Communication keeps its neutral still.
+const poseState=st=>st==='unknown'?'ceased':st;
 const ACTION={
   gibreal01:{working:'Standing · holographic command screen',resting:'Cola + movie · heart icon',ceased:'Seated · head lowered',communicating:'No separate animation; neutral still pose.'},
   gibreal02:{working:'Pad in hand · adjusting glasses',resting:'Seated · reading holo screen',ceased:'Standing · bowed back · unlit eyes',communicating:'No separate animation; neutral still pose.'},
@@ -20,6 +21,7 @@ const ACTION={
   bbmango02:{working:'Checking paper files',resting:'Bored · gazing outside',ceased:'Face-down · glasses fallen',communicating:'No separate animation; neutral still pose.'},
   bbmango03:{working:'Facing holographic screen · drawing with stylus',resting:'Office chair · tablet · heart icon',ceased:'Office chair · eyes closed · purple forehead · ω smile and connected blood trickle',communicating:'No separate animation; neutral still pose.'}
 };
+for(const states of Object.values(ACTION))states.unknown=`Activity unknown; showing the ceased pose. ${states.ceased}`;
 const symbols={working:'✦',resting:'♡',ceased:'◌',communicating:'⇄',unknown:'·'};
 const actorProps={working:'⌘',resting:'♡',ceased:'·',communicating:'↗',unknown:'?'};
 const themeStorage=v=>{S.theme=v;localStorage.setItem('antsu-theme',v);document.body.dataset.sky=v;render();};
@@ -248,6 +250,7 @@ function gibrealStandingPlacement(a,st,random){
  return result;
 }
 function roomPlacement(m,a,index,st,random=Math.random){
+ st=poseState(st);
  if(a.id==='bbmango02'&&m.room==='mango'){
   if(st==='working')return bbmango02Chair();
   if(st==='resting')return {x:60.5,y:46,width:18,mode:'standing',area:'mango-window-aisle'};
@@ -324,8 +327,8 @@ function roomScene(m){
  return `<div class="room-scene pixel-room room-${m.room} ${S.motion?'':'motion-paused'} ${S.showActors?'':'actors-hidden'}"><img class="room-art" src="${assetURL(`/assets/scenes/room-${m.room}-pixel-v1.png`)}" alt="${escapeHTML(m.label)}: ${m.room==='server'?'blue circuit lighting, server racks and three consoles':m.room==='office'?'warm white office, three desks, cabinets and panoramic window':'mango walls, wooden floor, five desks and plants'}" width="1536" height="1024">
  <div class="room-ambience" aria-hidden="true">${ROOM_EFFECTS[m.room]}</div>
  ${m.id==='mac01'&&agentStatus(agent('gibreal03'))==='working'?`<svg class="room-neural-link" viewBox="0 0 1536 1024" aria-hidden="true">${gibreal03Connection()}</svg>`:''}
- ${agentsOf(m.id).map((a,i)=>{const st=agentStatus(a),slot=roomPlacement(m,a,i,st),placed=slot.mode!=='fixed';const caption=`<b>${escapeHTML(a.name)}</b><small>${STATUS_LABEL[st].toUpperCase()} · ${a.source==='live'?'LIVE':a.source==='stale'?'STALE':'PREVIEW'}</small>`;return `<a href="#/agents/${a.id}" class="scene-agent scene-agent-${i+1} scene-${poseState(st)} ${S.sprites?.[a.id]?.[poseState(st)]?'custom-agent':'prototype-agent'} ${placed?`placed-agent ${slot.mode}-agent`:''}" style="--agent-x:${slot.x}%;--agent-y:${slot.y}%;${placed?`--actor-width:${slot.width}cqw;`:''}" data-placement="${slot.area||'fixed'}" aria-label="Open ${escapeHTML(a.name)} dossier">${S.sprites?.[a.id]?.[poseState(st)]?'':`<div class="agent-signal">${symbols[st]}</div>`}${actorFigure(a,st)}${placed?`<span class="agent-caption">${caption}</span>`:caption}</a>`;}).join('')}
- ${m.id==='mac02'&&agentStatus(agent('muv01'))==='ceased'?`<svg class="room-leader-foreground" viewBox="0 0 1536 1024" aria-hidden="true">${muv01DeskForeground('room')}</svg>`:''}
+ ${agentsOf(m.id).map((a,i)=>{const st=agentStatus(a),pose=poseState(st),slot=roomPlacement(m,a,i,pose),placed=slot.mode!=='fixed';const caption=`<b>${escapeHTML(a.name)}</b><small>${STATUS_LABEL[st].toUpperCase()} · ${a.source==='live'?'LIVE':a.source==='stale'?'STALE':'PREVIEW'}</small>`;return `<a href="#/agents/${a.id}" class="scene-agent scene-agent-${i+1} scene-${pose} ${S.sprites?.[a.id]?.[pose]?'custom-agent':'prototype-agent'} ${placed?`placed-agent ${slot.mode}-agent`:''}" style="--agent-x:${slot.x}%;--agent-y:${slot.y}%;${placed?`--actor-width:${slot.width}cqw;`:''}" data-placement="${slot.area||'fixed'}" aria-label="Open ${escapeHTML(a.name)} dossier">${S.sprites?.[a.id]?.[pose]?'':`<div class="agent-signal">${symbols[st]}</div>`}${actorFigure(a,st)}${placed?`<span class="agent-caption">${caption}</span>`:caption}</a>`;}).join('')}
+ ${m.id==='mac02'&&poseState(agentStatus(agent('muv01')))==='ceased'?`<svg class="room-leader-foreground" viewBox="0 0 1536 1024" aria-hidden="true">${muv01DeskForeground('room')}</svg>`:''}
  <div class="scene-overlay">F${String(m.floor).padStart(2,'0')} / ${escapeHTML(m.name.toUpperCase())}<span>${agentsOf(m.id).length} AGENT AVATARS</span></div></div>`;
 }
 function roomPage(m){
@@ -333,7 +336,7 @@ function roomPage(m){
  <div class="room-grid"><div class="room-main"><div class="panel-title"><span>◈ ${escapeHTML(m.name.toUpperCase())} / PIXEL ROOM</span><div class="scene-tools"><button class="motion-toggle" id="actors-toggle" aria-pressed="${S.showActors}" aria-label="Character avatars">${S.showActors?'Hide avatars':'Show avatars'}</button><button class="motion-toggle" id="motion-toggle" aria-pressed="${S.motion}" aria-label="Ambient animation">${S.motion?'Ⅱ Pause motion':'▷ Play motion'}</button></div></div>${roomScene(m)}<div class="room-caption">Original room art · Ambient effects are decorative · All nine agent avatars have custom sprites and portraits.</div></div>
  <div class="machine-side"><div class="panel-title"><span>▣ MACHINE STATUS</span><span class="conn ${m.connection}">${m.connection.toUpperCase()}</span></div><div class="machine-details">${machineFacts(m)}${storageRows(m.telemetry||{})}<div class="machine-metrics"><div><span>HOST</span><b>${fmt(m.telemetry.hostname)}</b></div><div><span>RAM LOAD</span><b>${m.telemetry.memoryUsedPercent===undefined?'—':`${fmt(m.telemetry.memoryUsedPercent)}%`}</b></div><div><span>LAST CONTACT</span><b>${m.lastSeen?new Date(m.lastSeen).toLocaleTimeString('en-GB',{timeZone:'Asia/Tokyo'})+' JST':'NEVER'}</b></div></div></div></div></div>
  <div class="section-heading"><div><h2>Room personnel</h2><p>Choose a status in preview mode to inspect the future animation mapping.</p></div></div>
- <div class="personnel-grid">${a.map(x=>`<div class="personnel-card"><div class="personnel-heading"><a href="#/agents/${x.id}">${avatar(x,'p-avatar')}<span><b>${escapeHTML(x.name)}</b><small>${escapeHTML(x.position)}</small></span></a>${statusTag(x)}</div><p>${escapeHTML(ACTION[x.id]?.[agentStatus(x)]||'No scene mapping')}</p>${S.sprites?.[x.id]?.icon?`<a class="sprite-studio-link" href="#/characters/${x.id}">View animation study ↗</a>`:''}<div class="state-controls" role="group" aria-label="Preview ${escapeHTML(x.name)} state">${ANIMATION_STATES.map(st=>`<button data-preview-id="${x.id}" data-preview-status="${st}" ${x.source!=='demo'?'disabled title="Status controlled by collector"':''} aria-pressed="${agentStatus(x)===st}" class="${agentStatus(x)===st?'selected':''}">${escapeHTML(st)}</button>`).join('')}</div></div>`).join('')}</div></div>`;
+ <div class="personnel-grid">${a.map(x=>`<div class="personnel-card"><div class="personnel-heading"><a href="#/agents/${x.id}">${avatar(x,'p-avatar')}<span><b>${escapeHTML(x.name)}</b><small>${escapeHTML(x.position)}</small></span></a>${statusTag(x)}</div><p>${escapeHTML(ACTION[x.id]?.[agentStatus(x)]||'No scene mapping')}</p>${S.sprites?.[x.id]?.icon?`<a class="sprite-studio-link" href="#/characters/${x.id}">View animation study ↗</a>`:''}<div class="state-controls" role="group" aria-label="Preview ${escapeHTML(x.name)} state">${PREVIEW_STATES.map(st=>`<button data-preview-id="${x.id}" data-preview-status="${st}" ${x.source!=='demo'?'disabled title="Status controlled by collector"':''} aria-pressed="${agentStatus(x)===st}" class="${agentStatus(x)===st?'selected':''}">${escapeHTML(st)}</button>`).join('')}</div></div>`).join('')}</div></div>`;
 }
 const chips=v=>Array.isArray(v)?v.length?v.map(t=>`<span class="square-chip">${fmt(typeof t==='object'?JSON.stringify(t):t)}</span>`).join(''):'<span class="placeholder">None reported</span>':`<span class="placeholder">Awaiting collector data</span>`;
 function missionItems(value,kind){
@@ -421,8 +424,8 @@ function characterPage(a){
  return `<div class="page character-page"><div class="page-eyebrow">CHARACTER ART / STUDY 01</div><div class="page-title-row"><div><h1>${escapeHTML(a.name)} <span>· Animation studio</span></h1><p>Reference-based pixel art · Eight-frame action loops · Preview only</p></div><a class="pill-outline" href="#/machines/${a.machine}">← BACK TO ROOM</a></div>
  <div class="character-toolbar"><div><strong>${escapeHTML(S.sprites[a.id].label||a.name)}</strong><p>${escapeHTML(S.sprites[a.id].description||'Reference-based pixel character.')}</p></div><button class="motion-toggle" id="motion-toggle" aria-pressed="${S.motion}" aria-label="Ambient animation">${S.motion?'Ⅱ Pause animation':'▷ Play animation'}</button></div>
  <section class="icon-preview"><div><h2>UI portrait</h2><p>Sidebar · Floor directory · Personnel card · Agent dossier</p></div><div class="icon-sizes">${[24,32,64,96].map(size=>`<div>${avatar(a,'sample-icon icon-'+size)}<small>${size} PX</small></div>`).join('')}</div></section>
- <div class="animation-grid">${states.map(st=>`<section class="animation-card"><div class="animation-card-title"><h2>${st==='unknown'?'Idle / unknown':STATUS_LABEL[st]}</h2><span>${S.sprites[a.id][st].still||S.sprites[a.id][st].atlas?.frames.length===1?'STATIC':S.sprites[a.id][st].fps+' FPS'}</span></div>${characterStage(a,st)}<p>${escapeHTML(ACTION[a.id]?.[st]||'Neutral idle')}</p></section>`).join('')}</div>
- <p class="art-study-note">These are art previews, not live activity. The room uses the reported agent state. Unknown activity keeps a neutral, still pose.</p></div>`;
+ <div class="animation-grid">${states.map(st=>`<section class="animation-card"><div class="animation-card-title"><h2>${STATUS_LABEL[st]}</h2><span>${S.sprites[a.id][st].still||S.sprites[a.id][st].atlas?.frames.length===1?'STATIC':(S.sprites[a.id][st].atlas.frames.length/S.sprites[a.id][st].fps).toFixed(1)+' S LOOP'}</span></div>${characterStage(a,st)}<p>${escapeHTML(ACTION[a.id]?.[st]||'')}</p></section>`).join('')}</div>
+ <p class="art-study-note">These are art previews, not live activity. The room uses the reported agent state. Unknown activity shows the ceased pose.</p></div>`;
 }
 function notFound(){return `<div class="page"><h1>Lost in the tower.</h1><p>That floor isn't registered.</p><a class="action-link" href="#/building">BACK TO HEADQUARTERS ↗</a></div>`;}
 function render(){

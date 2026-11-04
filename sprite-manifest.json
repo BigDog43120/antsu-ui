@@ -4,7 +4,7 @@
     "label": "BBMango01 · Mango assistant",
     "working": {
       "src": "/assets/sprites/bbmango01-eight-v2.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -80,7 +80,7 @@
     },
     "resting": {
       "src": "/assets/sprites/bbmango01-eight-v2.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -231,7 +231,7 @@
       "fps": 2.5,
       "still": true
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/bbmango01-actions-v5.png",
       "atlas": {
         "width": 1254,
@@ -259,7 +259,7 @@
     "description": "Golden bob, white-and-gold coat and expressive ω smile. Holographic drawing, tablet reading and a seated exhausted pose.",
     "working": {
       "src": "/assets/sprites/bbmango03-eight-v1.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -335,7 +335,7 @@
     },
     "resting": {
       "src": "/assets/sprites/bbmango03-resting-chair-v2.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1774,
         "height": 887,
@@ -486,7 +486,7 @@
       },
       "still": true
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/bbmango03-actions-v1.png",
       "fps": 1,
       "atlas": {
@@ -513,7 +513,7 @@
     "description": "Pink bob and purple streak, teal eyes, red-and-gold qipao and ivory mechanical limbs. Expressionless hologram work, movie and cola rest, and a motionless lowered-head pose.",
     "working": {
       "src": "/assets/sprites/gibreal01-eight-v1.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -637,7 +637,7 @@
     },
     "resting": {
       "src": "/assets/sprites/gibreal01-romantic-rest-v1.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -836,7 +836,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/gibreal01-static-v1.png",
       "fps": 1,
       "still": true,
@@ -864,7 +864,7 @@
     "description": "Dusty pink waves, teal eyes, cybernetic earpiece and white lace dress. Neural-link work, server inspection and a quiet folded-leg ceased pose.",
     "working": {
       "src": "/assets/sprites/gibreal03-eight-v2.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -988,7 +988,7 @@
     },
     "resting": {
       "src": "/assets/sprites/gibreal03-eight-v2.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -1187,7 +1187,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/gibreal03-static-v2.png",
       "fps": 1,
       "still": true,
@@ -1215,7 +1215,7 @@
     "description": "Dusty pink bob, white glasses, teal eyes and cyan hair clip. Charcoal suit with pink paw tie, tablet research and seated holographic reading.",
     "working": {
       "src": "/assets/sprites/gibreal02-eight-v1.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -1339,7 +1339,7 @@
     },
     "resting": {
       "src": "/assets/sprites/gibreal02-eight-v1.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -1538,7 +1538,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/gibreal02-static-v1.png",
       "fps": 1,
       "still": true,
@@ -1561,12 +1561,12 @@
     }
   },
   "gibreal04": {
-    "icon": "/assets/sprites/gibreal04-icon-v1.png",
+    "icon": "/assets/sprites/gibreal04-icon-v3.png",
     "label": "GibReaL04 · Mac02 operations agent",
     "description": "Long rose curls, teal eyes, heart choker, burgundy top and silver mechanical arms. Terminal operations, shy resting on the left office floor and a quiet seated ceased pose.",
     "working": {
       "src": "/assets/sprites/gibreal04-eight-v1.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1245,
         "height": 1263,
@@ -1691,7 +1691,7 @@
     },
     "resting": {
       "src": "/assets/sprites/gibreal04-eight-v1.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1245,
         "height": 1263,
@@ -1890,7 +1890,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/gibreal04-static-v2.png",
       "fps": 1,
       "still": true,
@@ -1918,7 +1918,7 @@
     "description": "Pink bob, emerald eyes, sage hoodie and silver robotic arms. Awkward seated terminal work, cheerful leader-desk resting, and an inactive floor pose.",
     "working": {
       "src": "/assets/sprites/gibreal05-eight-v1.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -2042,7 +2042,7 @@
     },
     "resting": {
       "src": "/assets/sprites/gibreal05-eight-v1.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -2241,7 +2241,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/gibreal05-static-v1.png",
       "fps": 1,
       "still": true,
@@ -2269,7 +2269,7 @@
     "description": "Silver bob, orange-red eyes and a fitted black-and-gold uniform with plain shoulders. No cape or epaulettes. Terminal work, a window call and sleeping in the leader chair.",
     "working": {
       "src": "/assets/sprites/muv01-eight-v1.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1246,
         "height": 1263,
@@ -2393,7 +2393,7 @@
     },
     "resting": {
       "src": "/assets/sprites/muv01-eight-v1.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1246,
         "height": 1263,
@@ -2592,7 +2592,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/muv01-static-v1.png",
       "fps": 1,
       "still": true,
@@ -2620,7 +2620,7 @@
     "description": "Honey-gold side ponytail, red glasses and a white-and-gold floral uniform. Paper files, bored window-gazing and a motionless fallen-glasses pose.",
     "working": {
       "src": "/assets/sprites/bbmango02-eight-v2.png",
-      "fps": 4.8,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -2696,7 +2696,7 @@
     },
     "resting": {
       "src": "/assets/sprites/bbmango02-eight-v2.png",
-      "fps": 3.2,
+      "fps": 6.153846153846154,
       "atlas": {
         "width": 1254,
         "height": 1254,
@@ -2847,7 +2847,7 @@
         ]
       }
     },
-    "unknown": {
+    "communicating": {
       "src": "/assets/sprites/bbmango02-static-v1.png",
       "fps": 1,
       "still": true,
