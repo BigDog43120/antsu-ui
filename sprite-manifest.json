@@ -258,250 +258,250 @@
     "label": "BBMango03 · Mango designer",
     "description": "Golden bob, white-and-gold coat and expressive ω smile. Holographic drawing, tablet reading and a seated exhausted pose.",
     "working": {
-      "src": "/assets/sprites/bbmango03-eight-v1.png",
+      "src": "/assets/sprites/bbmango03-eight-v2.png",
       "fps": 6.153846153846154,
       "atlas": {
-        "width": 1254,
-        "height": 1254,
+        "width": 1440,
+        "height": 1448,
         "canvasWidth": 360,
         "canvasHeight": 336,
         "frames": [
           {
             "x": 0,
             "y": 0,
-            "width": 342,
-            "height": 332,
-            "offsetX": 15.5,
-            "offsetY": -3
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 342,
+            "x": 360,
             "y": 0,
-            "width": 308,
-            "height": 332,
-            "offsetX": 45.5,
-            "offsetY": -4
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 650,
+            "x": 720,
             "y": 0,
-            "width": 312,
-            "height": 332,
-            "offsetX": 39.5,
-            "offsetY": -3
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 962,
+            "x": 1080,
             "y": 0,
-            "width": 292,
-            "height": 332,
-            "offsetX": 41.5,
-            "offsetY": -4
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
             "x": 0,
-            "y": 332,
-            "width": 342,
-            "height": 313,
-            "offsetX": 15,
-            "offsetY": 16
+            "y": 362,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 342,
-            "y": 332,
-            "width": 308,
-            "height": 313,
-            "offsetX": 44,
-            "offsetY": 16
+            "x": 360,
+            "y": 362,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 650,
-            "y": 332,
-            "width": 312,
-            "height": 313,
-            "offsetX": 40.5,
-            "offsetY": 15
+            "x": 720,
+            "y": 362,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 962,
-            "y": 332,
-            "width": 292,
-            "height": 313,
-            "offsetX": 41.5,
-            "offsetY": 15
+            "x": 1080,
+            "y": 362,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           }
         ]
       }
     },
     "resting": {
-      "src": "/assets/sprites/bbmango03-resting-chair-v2.png",
+      "src": "/assets/sprites/bbmango03-eight-v2.png",
       "fps": 6.153846153846154,
       "atlas": {
-        "width": 1774,
-        "height": 887,
-        "canvasWidth": 490,
-        "canvasHeight": 460,
+        "width": 1440,
+        "height": 1448,
+        "canvasWidth": 360,
+        "canvasHeight": 336,
         "frames": [
           {
             "x": 0,
-            "y": 0,
-            "width": 444,
-            "height": 444,
-            "offsetX": 28,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
-            "x": 444,
-            "y": 0,
-            "width": 443,
-            "height": 444,
-            "offsetX": 28,
+            "x": 360,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
-            "x": 887,
-            "y": 0,
-            "width": 443,
-            "height": 444,
-            "offsetX": 28,
+            "x": 720,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
-            "x": 1330,
-            "y": 0,
-            "width": 444,
-            "height": 444,
-            "offsetX": 28,
+            "x": 1080,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
-            "y": 444,
-            "width": 444,
-            "height": 443,
-            "offsetX": 28,
+            "y": 1086,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
-            "x": 444,
-            "y": 444,
-            "width": 443,
-            "height": 443,
-            "offsetX": 28,
+            "x": 360,
+            "y": 1086,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
-            "x": 887,
-            "y": 444,
-            "width": 443,
-            "height": 443,
-            "offsetX": 28,
+            "x": 720,
+            "y": 1086,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           },
           {
-            "x": 1330,
-            "y": 444,
-            "width": 444,
-            "height": 443,
-            "offsetX": 28,
+            "x": 1080,
+            "y": 1086,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
             "offsetY": 0
           }
         ]
       }
     },
     "ceased": {
-      "src": "/assets/sprites/bbmango03-ceased-v1.png",
+      "src": "/assets/sprites/bbmango03-stills-v2.png",
       "fps": 1,
       "atlas": {
-        "width": 1230,
-        "height": 1278,
-        "canvasWidth": 1230,
-        "canvasHeight": 1292,
+        "width": 720,
+        "height": 362,
+        "canvasWidth": 360,
+        "canvasHeight": 336,
         "frames": [
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 1230,
-            "height": 1278,
+            "width": 360,
+            "height": 362,
             "offsetX": 0,
-            "offsetY": 4
+            "offsetY": 0
           }
         ]
       },
       "still": true
     },
     "communicating": {
-      "src": "/assets/sprites/bbmango03-actions-v1.png",
+      "src": "/assets/sprites/bbmango03-stills-v2.png",
       "fps": 1,
       "atlas": {
-        "width": 1254,
-        "height": 1254,
-        "canvasWidth": 320,
+        "width": 720,
+        "height": 362,
+        "canvasWidth": 360,
         "canvasHeight": 336,
         "frames": [
           {
-            "x": 0,
-            "y": 940,
-            "width": 314,
-            "height": 314,
-            "offsetX": -5,
-            "offsetY": 13
+            "x": 360,
+            "y": 0,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
           }
         ]
       }
