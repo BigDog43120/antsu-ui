@@ -1,13 +1,13 @@
 {
   "bbmango01": {
-    "icon": "/assets/sprites/bbmango01-icon-v3.png",
-    "label": "BBMango01 · Mango assistant",
+    "icon": "/assets/sprites/bbmango01-icon-v3-hair-gold-v1-mango-knot-v1.png",
+    "label": "BBMango01 \u00b7 Mango assistant",
     "working": {
-      "src": "/assets/sprites/bbmango01-eight-v3.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/bbmango01-working-w15-frame12-from08-v1.png",
+      "fps": 7.185628742514971,
       "atlas": {
         "width": 1376,
-        "height": 1448,
+        "height": 1086,
         "canvasWidth": 344,
         "canvasHeight": 361.2,
         "frames": [
@@ -70,6 +70,38 @@
           {
             "x": 1032,
             "y": 362,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 724,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 344,
+            "y": 724,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 688,
+            "y": 724,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 1032,
+            "y": 724,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -79,17 +111,17 @@
       }
     },
     "resting": {
-      "src": "/assets/sprites/bbmango01-eight-v3.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/bbmango01-resting-r12-hair-fix-v3.png",
+      "fps": 7.185628742514971,
       "atlas": {
         "width": 1376,
-        "height": 1448,
+        "height": 1086,
         "canvasWidth": 344,
         "canvasHeight": 361.2,
         "frames": [
           {
             "x": 0,
-            "y": 724,
+            "y": 0,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -97,7 +129,7 @@
           },
           {
             "x": 344,
-            "y": 724,
+            "y": 0,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -105,7 +137,7 @@
           },
           {
             "x": 688,
-            "y": 724,
+            "y": 0,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -113,7 +145,7 @@
           },
           {
             "x": 1032,
-            "y": 724,
+            "y": 0,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -121,7 +153,7 @@
           },
           {
             "x": 0,
-            "y": 1086,
+            "y": 362,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -129,7 +161,7 @@
           },
           {
             "x": 344,
-            "y": 1086,
+            "y": 362,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -137,7 +169,7 @@
           },
           {
             "x": 688,
-            "y": 1086,
+            "y": 362,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -145,7 +177,39 @@
           },
           {
             "x": 1032,
-            "y": 1086,
+            "y": 362,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 724,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 344,
+            "y": 724,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 688,
+            "y": 724,
+            "width": 344,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 1032,
+            "y": 724,
             "width": 344,
             "height": 362,
             "offsetX": 0,
@@ -155,74 +219,74 @@
       }
     },
     "ceased": {
-      "src": "/assets/sprites/bbmango01-stills-v1.png",
+      "src": "/assets/sprites/bbmango01-stills-v5-hair-gold-v1-mango-knot-v1.png",
       "atlas": {
-        "width": 640,
-        "height": 336,
-        "canvasWidth": 320,
-        "canvasHeight": 336,
+        "width": 688,
+        "height": 362,
+        "canvasWidth": 344,
+        "canvasHeight": 361.2,
         "frames": [
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           },
           {
             "x": 0,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           }
@@ -232,18 +296,18 @@
       "still": true
     },
     "communicating": {
-      "src": "/assets/sprites/bbmango01-stills-v1.png",
+      "src": "/assets/sprites/bbmango01-stills-v5-hair-gold-v1-mango-knot-v1.png",
       "atlas": {
-        "width": 640,
-        "height": 336,
-        "canvasWidth": 320,
-        "canvasHeight": 336,
+        "width": 688,
+        "height": 362,
+        "canvasWidth": 344,
+        "canvasHeight": 361.2,
         "frames": [
           {
-            "x": 320,
+            "x": 344,
             "y": 0,
-            "width": 320,
-            "height": 336,
+            "width": 344,
+            "height": 362,
             "offsetX": 0,
             "offsetY": 0
           }
@@ -251,18 +315,18 @@
       },
       "fps": 1
     },
-    "description": "Golden-orange twin buns, luminous amber eyes, red knot tassels and a detailed mango-yellow uniform."
+    "description": "Golden-orange twin buns, amber eyes and a fuller mango-yellow uniform silhouette. Smaller head and sturdy legs; runs with a mango box while working."
   },
   "bbmango03": {
     "icon": "/assets/sprites/bbmango03-icon-v1.png",
-    "label": "BBMango03 · Mango designer",
-    "description": "Golden bob, white-and-gold coat and expressive ω smile. Holographic drawing, tablet reading and a seated exhausted pose.",
+    "label": "BBMango03 \u00b7 Mango designer",
+    "description": "Golden bob, white-and-gold coat and expressive \u03c9 smile. Holographic drawing, tablet reading and a seated exhausted pose.",
     "working": {
-      "src": "/assets/sprites/bbmango03-eight-v2.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/bbmango03-working-twelve-v1.png",
+      "fps": 7.185628742514971,
       "atlas": {
         "width": 1440,
-        "height": 1448,
+        "height": 1086,
         "canvasWidth": 360,
         "canvasHeight": 336,
         "frames": [
@@ -325,6 +389,38 @@
           {
             "x": 1080,
             "y": 362,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 360,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 720,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 1080,
+            "y": 724,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -334,17 +430,17 @@
       }
     },
     "resting": {
-      "src": "/assets/sprites/bbmango03-eight-v2.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/bbmango03-resting-twelve-v2.png",
+      "fps": 7.185628742514971,
       "atlas": {
         "width": 1440,
-        "height": 1448,
+        "height": 1086,
         "canvasWidth": 360,
         "canvasHeight": 336,
         "frames": [
           {
             "x": 0,
-            "y": 724,
+            "y": 0,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -352,7 +448,7 @@
           },
           {
             "x": 360,
-            "y": 724,
+            "y": 0,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -360,7 +456,7 @@
           },
           {
             "x": 720,
-            "y": 724,
+            "y": 0,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -368,7 +464,7 @@
           },
           {
             "x": 1080,
-            "y": 724,
+            "y": 0,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -376,7 +472,7 @@
           },
           {
             "x": 0,
-            "y": 1086,
+            "y": 362,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -384,7 +480,7 @@
           },
           {
             "x": 360,
-            "y": 1086,
+            "y": 362,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -392,7 +488,7 @@
           },
           {
             "x": 720,
-            "y": 1086,
+            "y": 362,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -400,7 +496,39 @@
           },
           {
             "x": 1080,
-            "y": 1086,
+            "y": 362,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 360,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 720,
+            "y": 724,
+            "width": 360,
+            "height": 362,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 1080,
+            "y": 724,
             "width": 360,
             "height": 362,
             "offsetX": 0,
@@ -509,7 +637,7 @@
   },
   "gibreal01": {
     "icon": "/assets/sprites/gibreal01-icon-v4.png",
-    "label": "GibReaL01 · Mac01 main agent",
+    "label": "GibReaL01 \u00b7 Mac01 main agent",
     "description": "Pink bob and purple streak, teal eyes, red-and-gold qipao and ivory mechanical limbs. Expressionless hologram work, movie and cola rest, and a motionless lowered-head pose.",
     "working": {
       "src": "/assets/sprites/gibreal01-working-twelve-v2.png",
@@ -956,7 +1084,7 @@
   },
   "gibreal03": {
     "icon": "/assets/sprites/gibreal03-icon-v2.png",
-    "label": "GibReaL03 · Mac01 systems agent",
+    "label": "GibReaL03 \u00b7 Mac01 systems agent",
     "description": "Dusty pink waves, teal eyes, cybernetic earpiece and white lace dress. Neural-link work, server inspection and a quiet folded-leg ceased pose.",
     "working": {
       "src": "/assets/sprites/gibreal03-eight-v2.png",
@@ -1307,7 +1435,7 @@
   },
   "gibreal02": {
     "icon": "/assets/sprites/gibreal02-icon-v1.png",
-    "label": "GibReaL02 · Mac01 research agent",
+    "label": "GibReaL02 \u00b7 Mac01 research agent",
     "description": "Dusty pink bob, white glasses, teal eyes and cyan hair clip. Charcoal suit with pink paw tie, tablet research and seated holographic reading.",
     "working": {
       "src": "/assets/sprites/gibreal02-eight-v1.png",
@@ -1658,7 +1786,7 @@
   },
   "gibreal04": {
     "icon": "/assets/sprites/gibreal04-icon-v3.png",
-    "label": "GibReaL04 · Mac02 operations agent",
+    "label": "GibReaL04 \u00b7 Mac02 operations agent",
     "description": "Long rose curls, teal eyes, heart choker, burgundy top and silver mechanical arms. Terminal operations, shy resting on the left office floor and a quiet seated ceased pose.",
     "working": {
       "src": "/assets/sprites/gibreal04-eight-v1.png",
@@ -2010,7 +2138,7 @@
   },
   "gibreal05": {
     "icon": "/assets/sprites/gibreal05-icon-v1.png",
-    "label": "GibReaL05 · Mac02 operations agent",
+    "label": "GibReaL05 \u00b7 Mac02 operations agent",
     "description": "Pink bob, emerald eyes, sage hoodie and silver robotic arms. Awkward seated terminal work, cheerful leader-desk resting, and an inactive floor pose.",
     "working": {
       "src": "/assets/sprites/gibreal05-eight-v1.png",
@@ -2361,7 +2489,7 @@
   },
   "muv01": {
     "icon": "/assets/sprites/muv01-icon-v1.png",
-    "label": "Muv01 · Mac02 team lead",
+    "label": "Muv01 \u00b7 Mac02 team lead",
     "description": "Silver bob, orange-red eyes and a fitted black-and-gold uniform with plain shoulders. No cape or epaulettes. Terminal work, a window call and sleeping in the leader chair.",
     "working": {
       "src": "/assets/sprites/muv01-eight-v1.png",
@@ -2711,163 +2839,227 @@
     }
   },
   "bbmango02": {
-    "icon": "/assets/sprites/bbmango02-icon-v1.png",
-    "label": "BBMango02 · Mango archivist",
+    "icon": "/assets/sprites/bbmango02-icon-v1-hair-gold-v1.png",
+    "label": "BBMango02 \u00b7 Mango archivist",
     "description": "Honey-gold side ponytail, red glasses and a white-and-gold floral uniform. Paper files, bored window-gazing and a motionless fallen-glasses pose.",
     "working": {
-      "src": "/assets/sprites/bbmango02-eight-v2.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/bbmango02-working-twelve-v10-hair-gold-v1.png",
+      "fps": 7.185628742514971,
       "atlas": {
-        "width": 1254,
-        "height": 1254,
+        "width": 1376,
+        "height": 1032,
         "canvasWidth": 344,
         "canvasHeight": 344,
         "frames": [
           {
-            "x": 25,
+            "x": 0,
             "y": 0,
-            "width": 310,
-            "height": 360,
-            "offsetX": 9.5,
-            "offsetY": -7
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 335,
+            "x": 344,
             "y": 0,
-            "width": 305,
-            "height": 360,
-            "offsetX": 13,
-            "offsetY": -7
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 640,
+            "x": 688,
             "y": 0,
-            "width": 305,
-            "height": 360,
-            "offsetX": 23,
-            "offsetY": -7
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 945,
+            "x": 1032,
             "y": 0,
-            "width": 309,
-            "height": 360,
-            "offsetX": 21.5,
-            "offsetY": -7
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 25,
-            "y": 360,
-            "width": 310,
-            "height": 314,
-            "offsetX": 8.5,
-            "offsetY": 34
+            "x": 0,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 335,
-            "y": 360,
-            "width": 305,
-            "height": 314,
-            "offsetX": 13.5,
-            "offsetY": 34
+            "x": 344,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 640,
-            "y": 360,
-            "width": 305,
-            "height": 314,
-            "offsetX": 23.5,
-            "offsetY": 34
+            "x": 688,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 945,
-            "y": 360,
-            "width": 309,
-            "height": 314,
-            "offsetX": 25,
-            "offsetY": 33
+            "x": 1032,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 344,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 688,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 1032,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           }
         ]
       }
     },
     "resting": {
-      "src": "/assets/sprites/bbmango02-eight-v2.png",
-      "fps": 6.153846153846154,
+      "src": "/assets/sprites/bbmango02-resting-twelve-v1-hair-gold-v1.png",
+      "fps": 7.185628742514971,
       "atlas": {
-        "width": 1254,
-        "height": 1254,
+        "width": 1376,
+        "height": 1032,
         "canvasWidth": 344,
         "canvasHeight": 344,
         "frames": [
           {
-            "x": 25,
-            "y": 674,
-            "width": 310,
-            "height": 276,
-            "offsetX": 4,
-            "offsetY": 67
+            "x": 0,
+            "y": 0,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 335,
-            "y": 674,
-            "width": 305,
-            "height": 276,
-            "offsetX": 7,
-            "offsetY": 67
+            "x": 344,
+            "y": 0,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 640,
-            "y": 674,
-            "width": 305,
-            "height": 276,
-            "offsetX": 22,
-            "offsetY": 67
+            "x": 688,
+            "y": 0,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 945,
-            "y": 674,
-            "width": 309,
-            "height": 276,
-            "offsetX": 15.5,
-            "offsetY": 67
+            "x": 1032,
+            "y": 0,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 25,
-            "y": 950,
-            "width": 310,
-            "height": 304,
-            "offsetX": 3,
-            "offsetY": 72
+            "x": 0,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 335,
-            "y": 950,
-            "width": 305,
-            "height": 304,
-            "offsetX": 5,
-            "offsetY": 72
+            "x": 344,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 640,
-            "y": 950,
-            "width": 305,
-            "height": 304,
-            "offsetX": 7.5,
-            "offsetY": 72
+            "x": 688,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           },
           {
-            "x": 945,
-            "y": 950,
-            "width": 309,
-            "height": 304,
-            "offsetX": 12.5,
-            "offsetY": 72
+            "x": 1032,
+            "y": 344,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 0,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 344,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 688,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
+          },
+          {
+            "x": 1032,
+            "y": 688,
+            "width": 344,
+            "height": 344,
+            "offsetX": 0,
+            "offsetY": 0
           }
         ]
       }
     },
     "ceased": {
-      "src": "/assets/sprites/bbmango02-static-v2.png",
+      "src": "/assets/sprites/bbmango02-static-v2-hair-gold-v1.png",
       "fps": 1,
       "still": true,
       "atlas": {
@@ -2944,7 +3136,7 @@
       }
     },
     "communicating": {
-      "src": "/assets/sprites/bbmango02-static-v1.png",
+      "src": "/assets/sprites/bbmango02-static-v1-hair-gold-v1.png",
       "fps": 1,
       "still": true,
       "atlas": {
