@@ -430,7 +430,7 @@
       }
     },
     "resting": {
-      "src": "/assets/sprites/bbmango03-resting-twelve-v2.png",
+      "src": "/assets/sprites/bbmango03-resting-twelve-v3-scale105.png",
       "fps": 7.185628742514971,
       "atlas": {
         "width": 1440,
